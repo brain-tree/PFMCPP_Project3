@@ -460,11 +460,11 @@ Thing 6) Band
 
 Thing 7) Hands
 5 properties:
-    1) Hour hand
-    2) Second hand
-    3) Sweep second hand
-    4) Tide dial
-    5) Arbitrary subdial
+    1) Hour hand (float)
+    2) Second hand (float)
+    3) Sweep second hand (double)
+    4) Tide dial (double)
+    5) Arbitrary subdial (float)
 3 things it can do:
     1) Mark number of hours
     2) Mark number of minutes
@@ -472,11 +472,11 @@ Thing 7) Hands
 
 Thing 8) Adjustment dials
 5 properties:
-    1) Crown
-    2) Pusher 1
-    3) Reset
-    4) Inner bezel crown
-    5) Pusher 2
+    1) Crown (float)
+    2) Pusher 1 (float)
+    3) Reset (int)
+    4) Inner bezel crown (double)
+    5) Pusher 2 (double)
 3 things it can do:
     1) Change displayed time forward
     2) Change displayed time backward
@@ -484,11 +484,11 @@ Thing 8) Adjustment dials
 
 Thing 9) Movement
 5 properties:
-    1) Main wheel
-    2) Fork
-    3) Ratchet wheel
-    4) Safety roller
-    5) Barrell hub
+    1) Main wheel (double)
+    2) Fork (int)
+    3) Ratchet wheel (double)
+    4) Safety roller (double)
+    5) Barrell hub (int)
 3 things it can do:
     1) Keep time
     2) Produce clicking noise
