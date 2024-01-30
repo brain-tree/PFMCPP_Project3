@@ -339,11 +339,11 @@ Define an object that is made of 5 sub-objects.
 
 Thing 10) Wrist watch
 5 properties:
-    1) Hour hand
-    2) Second hand
-    3) Backlight
-    4) Adjustment dial
-    5) Second notches
+    1) Case
+    2) Band
+    3) Hands
+    4) Adjustment dials
+    5) Movement
 3 things it can do:
     1) Display current time
     2) Measure amount of time past
@@ -434,65 +434,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Case
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Crystal
+    2) Dial ring
+    3) Bezel
+    4) Date window
+    5) Hands
 3 things it can do:
-    1)
-    2)
-    3)
+    1) House internal components
+    2) Display time
+    3) Keep internal components clean
 
-Thing 6)
+Thing 6) Band
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Links
+    2) Lug
+    3) Pins
+    4) Buckle
+    5) Adustment
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Holds watch to wrist
+    2) Tight to wrist
+    3) Loosen on wrist
 
-Thing 7)
+Thing 7) Hands
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Hour hand
+    2) Second hand
+    3) Sweep second hand
+    4) Tide dial
+    5) Arbitrary subdial
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Mark number of hours
+    2) Mark number of minutes
+    3) Mark number of seconds
 
-Thing 8)
+Thing 8) Adjustment dials
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Crown
+    2) Pusher 1
+    3) Reset
+    4) Inner bezel crown
+    5) Pusher 2
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change displayed time forward
+    2) Change displayed time backward
+    3) Activate secondary function
 
-Thing 9)
+Thing 9) Movement
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Main wheel
+    2) Fork
+    3) Ratchet wheel
+    4) Safety roller
+    5) Barrell hub
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Keep time
+    2) Produce clicking noise
+    3) Adjust timing
  */
 
 /*
