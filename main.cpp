@@ -478,14 +478,13 @@ Thing 4) Bank
     2) Service client
     3) Wire money
 
-
 Thing 5) Case
 5 properties:
-    1) Crystal
-    2) Dial ring
-    3) Bezel
-    4) Date window
-    5) Hands
+    1) Crystal (int)
+    2) Dial ring (float)
+    3) Bezel (int)
+    4) Date window (float)
+    5) Hands (int)
 3 things it can do:
     1) House internal components
     2) Display time
@@ -493,11 +492,11 @@ Thing 5) Case
 
     Thing 6) Band
     5 properties:
-    1) Links
-    2) Lug
-    3) Pins
-    4) Buckle
-    5) Adustment
+    1) Links (int)
+    2) Lug (int)
+    3) Pins (int)
+    4) Buckle (int)
+    5) Adustment (int)
 3 things it can do:
     1) Holds watch to wrist
     2) Tight to wrist
@@ -541,11 +540,11 @@ Thing 9) Movement
 
 Thing 10) Wrist watch
 5 properties:
-    1) Case
-    2) Band
-    3) Hands
-    4) Adjustment dials
-    5) Movement
+    1) Case (int)
+    2) Band (int)
+    3) Hands (int)
+    4) Adjustment dials (double)
+    5) Movement (int)
 3 things it can do:
     1) Display current time
     2) Measure amount of time past
