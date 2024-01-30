@@ -430,6 +430,8 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+
+/*
 Thing 1) Synthesizer
 5 properties:
     1) Number of oscillators (int)
@@ -549,7 +551,7 @@ Thing 10) Wrist watch
     1) Display current time
     2) Measure amount of time past
     3) Change displayed time
-
+*/
 
 /*
 =================
