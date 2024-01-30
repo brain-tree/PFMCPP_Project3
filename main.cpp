@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) Synthesizer
-5 properties:
-    1) Number of oscillators (int)
-    2) Number of knobs (int)
-    3) Amount of voltage per octave (float)
-    4) Number of keys (int)
-    5) Number of digital displays (int)
-3 things it can do:
-    1) Make sound
-    2) Show patch parameters
-    3) Adjust sound
 
-Thing 2) Bicycle
-5 properties:
-    1) Amount of gears (int)
-    2) Amount of brake levers (int)
-    3) Number of shifters (int)
-    4) Number of wheels (int)
-    5) Number of pedals (int)
-3 things it can do:
-    1) Move a person
-    2) Shift gears
-    3) Stop
-
-Thing 3) Restaurant
-5 properties:
-    1) Amount of menu items (int)
-    2) Name of ingredients per menu item (std::string)
-    3) Number of ovens (int)
-    4) Number of employees (int)
-    5) Number of tables (int)
-3 things it can do:
-    1) Make food
-    2) Serve diners
-    3) Charge money
-
-Thing 4) Bank
-5 properties:
-    1) Amount of money in vault (double)
-    2) Amount of armed guards (int)
-    3) Number of customers in line (int)
-    4) Number of tellers (int)
-    5) Amount of accounts (float)
-3 things it can do:
-    1) Collect money
-    2) Service client
-    3) Wire money
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Wrist watch
-5 properties:
-    1) Case
-    2) Band
-    3) Hands
-    4) Adjustment dials
-    5) Movement
-3 things it can do:
-    1) Display current time
-    2) Measure amount of time past
-    3) Change displayed time
+
  */
 
  /*
@@ -434,65 +378,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5) Case
-5 properties:
-    1) Crystal
-    2) Dial ring
-    3) Bezel
-    4) Date window
-    5) Hands
-3 things it can do:
-    1) House internal components
-    2) Display time
-    3) Keep internal components clean
 
-Thing 6) Band
-5 properties:
-    1) Links
-    2) Lug
-    3) Pins
-    4) Buckle
-    5) Adustment
-3 things it can do:
-    1) Holds watch to wrist
-    2) Tight to wrist
-    3) Loosen on wrist
-
-Thing 7) Hands
-5 properties:
-    1) Hour hand (float)
-    2) Second hand (float)
-    3) Sweep second hand (double)
-    4) Tide dial (double)
-    5) Arbitrary subdial (float)
-3 things it can do:
-    1) Mark number of hours
-    2) Mark number of minutes
-    3) Mark number of seconds
-
-Thing 8) Adjustment dials
-5 properties:
-    1) Crown (float)
-    2) Pusher 1 (float)
-    3) Reset (int)
-    4) Inner bezel crown (double)
-    5) Pusher 2 (double)
-3 things it can do:
-    1) Change displayed time forward
-    2) Change displayed time backward
-    3) Activate secondary function
-
-Thing 9) Movement
-5 properties:
-    1) Main wheel (double)
-    2) Fork (int)
-    3) Ratchet wheel (double)
-    4) Safety roller (double)
-    5) Barrell hub (int)
-3 things it can do:
-    1) Keep time
-    2) Produce clicking noise
-    3) Adjust timing
  */
 
 /*
@@ -544,12 +430,126 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+Thing 1) Synthesizer
+5 properties:
+    1) Number of oscillators (int)
+    2) Number of knobs (int)
+    3) Amount of voltage per octave (float)
+    4) Number of keys (int)
+    5) Number of digital displays (int)
+3 things it can do:
+    1) Make sound
+    2) Show patch parameters
+    3) Adjust sound
+
+Thing 2) Bicycle
+5 properties:
+    1) Amount of gears (int)
+    2) Amount of brake levers (int)
+    3) Number of shifters (int)
+    4) Number of wheels (int)
+    5) Number of pedals (int)
+3 things it can do:
+    1) Move a person
+    2) Shift gears
+    3) Stop
+
+Thing 3) Restaurant
+5 properties:
+    1) Amount of menu items (int)
+    2) Name of ingredients per menu item (std::string)
+    3) Number of ovens (int)
+    4) Number of employees (int)
+    5) Number of tables (int)
+3 things it can do:
+    1) Make food
+    2) Serve diners
+    3) Charge money
+
+Thing 4) Bank
+5 properties:
+    1) Amount of money in vault (double)
+    2) Amount of armed guards (int)
+    3) Number of customers in line (int)
+    4) Number of tellers (int)
+    5) Amount of accounts (float)
+3 things it can do:
+    1) Collect money
+    2) Service client
+    3) Wire money
 
 
+Thing 5) Case
+5 properties:
+    1) Crystal
+    2) Dial ring
+    3) Bezel
+    4) Date window
+    5) Hands
+3 things it can do:
+    1) House internal components
+    2) Display time
+    3) Keep internal components clean
 
+    Thing 6) Band
+    5 properties:
+    1) Links
+    2) Lug
+    3) Pins
+    4) Buckle
+    5) Adustment
+3 things it can do:
+    1) Holds watch to wrist
+    2) Tight to wrist
+    3) Loosen on wrist
 
+Thing 7) Hands
+5 properties:
+    1) Hour hand (float)
+    2) Second hand (float)
+    3) Sweep second hand (double)
+    4) Tide dial (double)
+    5) Arbitrary subdial (float)
+3 things it can do:
+    1) Mark number of hours
+    2) Mark number of minutes
+    3) Mark number of seconds
 
+Thing 8) Adjustment dials
+5 properties:
+    1) Crown (float)
+    2) Pusher 1 (float)
+    3) Reset (int)
+    4) Inner bezel crown (double)
+    5) Pusher 2 (double)
+3 things it can do:
+    1) Change displayed time forward
+    2) Change displayed time backward
+    3) Activate secondary function
 
+Thing 9) Movement
+5 properties:
+    1) Main wheel (double)
+    2) Fork (int)
+    3) Ratchet wheel (double)
+    4) Safety roller (double)
+    5) Barrell hub (int)
+3 things it can do:
+    1) Keep time
+    2) Produce clicking noise
+    3) Adjust timing
+
+Thing 10) Wrist watch
+5 properties:
+    1) Case
+    2) Band
+    3) Hands
+    4) Adjustment dials
+    5) Movement
+3 things it can do:
+    1) Display current time
+    2) Measure amount of time past
+    3) Change displayed time
 
 
 /*
