@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Synthesizer
 5 properties:
-    1) Number of oscillators
-    2) Number of knobs
-    3) Amount of voltage per octave
-    4) Number of keys
-    5) Number of digital displays
+    1) Number of oscillators (int)
+    2) Number of knobs (int)
+    3) Amount of voltage per octave (float)
+    4) Number of keys (int)
+    5) Number of digital displays (int)
 3 things it can do:
     1) Make sound
     2) Show patch parameters
@@ -210,11 +210,11 @@ Thing 1) Synthesizer
 
 Thing 2) Bicycle
 5 properties:
-    1) Amount of gears
-    2) Amount of brake levers
-    3) Number of shifters
-    4) Number of wheels
-    5) Number of pedals
+    1) Amount of gears (int)
+    2) Amount of brake levers (int)
+    3) Number of shifters (int)
+    4) Number of wheels (int)
+    5) Number of pedals (int)
 3 things it can do:
     1) Move a person
     2) Shift gears
@@ -222,11 +222,11 @@ Thing 2) Bicycle
 
 Thing 3) Restaurant
 5 properties:
-    1) Amount of menu items
-    2) Amount of ingredients per menu item
-    3) Number of ovens
-    4) Number of employees
-    5) Number of tables
+    1) Amount of menu items (int)
+    2) Name of ingredients per menu item (std::string)
+    3) Number of ovens (int)
+    4) Number of employees (int)
+    5) Number of tables (int)
 3 things it can do:
     1) Make food
     2) Serve diners
@@ -234,11 +234,11 @@ Thing 3) Restaurant
 
 Thing 4) Bank
 5 properties:
-    1) Amount of money in vault
-    2) Amount of armed guards
-    3) Number of customers in line
-    4) Number of tellers
-    5) Amount of accounts
+    1) Amount of money in vault (double)
+    2) Amount of armed guards (int)
+    3) Number of customers in line (int)
+    4) Number of tellers (int)
+    5) Amount of accounts (float)
 3 things it can do:
     1) Collect money
     2) Service client
