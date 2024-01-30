@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Synthesizer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of oscillators
+    2) Number of knobs
+    3) Amount of voltage per octave
+    4) Number of keys
+    5) Number of digital displays
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Make sound
+    2) Show patch parameters
+    3) Adjust sound
 
-Thing 2)
+Thing 2) Bicycle
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Amount of gears
+    2) Amount of brake levers
+    3) Number of shifters
+    4) Number of wheels
+    5) Number of pedals
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Move a person
+    2) Shift gears
+    3) Stop
 
-Thing 3)
+Thing 3) Restaurant
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Amount of menu items
+    2) Amount of ingredients per menu item
+    3) Number of ovens
+    4) Number of employees
+    5) Number of tables
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Make food
+    2) Serve diners
+    3) Charge money
 
-Thing 4)
+Thing 4) Bank
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Amount of money in vault
+    2) Amount of armed guards
+    3) Number of customers in line
+    4) Number of tellers
+    5) Amount of accounts
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Collect money
+    2) Service client
+    3) Wire money
 */
 
 /*
