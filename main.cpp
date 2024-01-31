@@ -679,8 +679,11 @@ struct Synthesizer
     int numberOfDigitalDisplays = 1;
     //3 things it can do:
     //    - Make sound
+    void makeSound();
     //    - Show patch parameters
+    void showPatchParameters();
     //    - Adjust sound
+    float changeVoltage(float amountOfVoltage); //returns the current voltage value
 };
 
 struct Bicycle
@@ -698,8 +701,11 @@ struct Bicycle
     int numberOfPedals = 2;
     //3 things it can do:
     //    - Move a person
+    void moveBicycle();
     //    - Shift gears
+    void shiftGears();
     //    - Stop
+    void stopBicycle();
 };
 
 struct Restaurant
@@ -717,8 +723,11 @@ struct Restaurant
     int numberOfTables = 30;
     //3 things it can do:
     //    - Make food
+    void makeFood();
     //    - Serve diners
+    void serveDiners();
     //    - Charge money
+    float chargeMoney(float moneyOfMeal); //returns the amount of the bill
 };
 
 struct Bank
@@ -736,8 +745,11 @@ struct Bank
     float amountOfAccounts = 1355.5f;
     //3 things it can do:
     //    - Collect money
+    double collectMoney(double amountOfMoneyCollected); //returns amount of money collected
     //    - Service client
+    void serviceClient();
     //    - Wire money
+    float wireMoney(float amountOfMoneyWired); //returns amount of money wired
 };
 
 struct Case
@@ -755,8 +767,11 @@ struct Case
     int hands = 2;
     //3 things it can do:
     //    - House internal components
+    void houseInternalComponents();
     //    - Display time
+    float displayTime(float currentTime); //returns current time displayed
     //    - Keep internal components clean
+    void keepInternalPartsClean();
 };
 
 struct Band
@@ -774,8 +789,11 @@ struct Band
     int adjustment = 1;
     //3 things it can do:
     //    - Holds watch to wrist
+    void holdWatchToWrist();
     //    - Tight to wrist
+    void adjustBandTightness();
     //    - Loosen on wrist
+    void adjustBandLooseness();
 };
 
 struct Hands
@@ -793,8 +811,11 @@ struct Hands
     float arbitraryDial = 120.f;
     //3 things it can do:
     //    - Mark number of hours
+    float displayHours(float hours); //returns current hour
     //    - Mark number of minutes
+    float displayMinutes(float minutes); //returns current minute
     //    - Mark number of seconds
+    float displaySeconds(float seconds); //returns current second
 };
 
 struct AdjustmentDials
@@ -812,8 +833,11 @@ struct AdjustmentDials
     double pusher2 = 60.00;
     //3 things it can do:
     //    - Change displayed time forward
+    float changeTimeForward(float time); //returns new time
     //    - Change displayed time backward
+    float changeTimeBackward(float time); //returns new time
     //    - Activate secondary function
+    void useAuxiliaryFunction();
 };
 
 struct Movement
@@ -831,8 +855,11 @@ struct Movement
     int barrellHub = 1;
     //3 things it can do:
     //    - Keep time
+    void keepTime();
     //    - Produce clicking noise
+    void makeClickSound();
     //    - Adjust timing
+    void adjustTiming();
 };
 
 struct WristWatch
@@ -850,8 +877,11 @@ struct WristWatch
     int movement = 1;
     //3 things it can do:
     //    - Display current time
+    float displayCurrentTime(float currentTime); //returns current time
     //    - Measure amount of time past
+    double measureTimePast(double time); //returns amount of time past
     //    - Change displayed time
+    void changeDisplayedTime();
 };
 /*
 =================
