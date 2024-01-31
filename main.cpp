@@ -666,53 +666,142 @@ Notice that the struct name 'CarWash' conforms with the Course Coding Standard, 
 */
 struct Synthesizer
 {
-
+    //5 properties:
+    //    - Number of oscillators
+    //    - Number of knobs
+    //    - Amount of voltage per octave
+    //    - Number of keys
+    //    - Number of digital displays
+    //3 things it can do:
+    //    - Make sound
+    //    - Show patch parameters
+    //    - Adjust sound
 };
 
 struct Bicycle
 {
-
+    //5 properties:
+    //    - Amount of gears
+    //    - Amount of brake levers
+    //    - Number of shifters
+    //    - Number of wheels
+    //    - Number of pedals
+    //3 things it can do:
+    //    - Move a person
+    //    - Shift gears
+    //    - Stop
 };
 
 struct Restaurant
 {
-
+    //5 properties:
+    //    - Amount of menu items
+    //    - Name of ingredients per menu item
+    //    - Number of ovens
+    //    - Number of employees
+    //    - Number of tables
+    //3 things it can do:
+    //    - Make food
+    //    - Serve diners
+    //    - Charge money
 };
 
 struct Bank
 {
-
+    //5 properties:
+    //    - Amount of money in vault
+    //    - Amount of armed guards
+    //    - Number of customers in line
+    //    - Number of tellers
+    //    - Amount of accounts
+    //3 things it can do:
+    //    - Collect money
+    //    - Service client
+    //    - Wire money
 };
 
 struct Case
 {
-
+    //5 properties:
+    //    - Crystal
+    //    - Dial ring
+    //    - Bezel
+    //    - Date window 
+    //    - Hands
+    //3 things it can do:
+    //    - House internal components
+    //    - Display time
+    //    - Keep internal components clean
 };
 
 struct Band
 {
-
+    //5 properties:
+    //    - Links
+    //    - Lug
+    //    - Pins
+    //    - Buckle
+    //    - Adustment
+    //3 things it can do:
+    //    - Holds watch to wrist
+    //    - Tight to wrist
+    //    - Loosen on wrist
 };
 
 struct Hands
 {
-
+    //5 properties:
+    //    - Hour hand 
+    //    - Second hand
+    //    - Sweep second hand
+    //    - Tide dial
+    //    - Arbitrary subdial
+    //3 things it can do:
+    //    - Mark number of hours
+    //    - Mark number of minutes
+    //    - Mark number of seconds
 };
-
 
 struct AdjustmentDials
 {
-
+    //5 properties:
+    //    - Crown
+    //    - Pusher 1
+    //    - Reset
+    //    - Inner bezel crown
+    //    - Pusher 2
+    //3 things it can do:
+    //    - Change displayed time forward
+    //    - Change displayed time backward
+    //    - Activate secondary function
 };
 
 struct Movement
 {
-
+    //5 properties:
+    //    - Main wheel
+    //    - Fork
+    //    - Ratchet wheel
+    //    - Safety roller
+    //    - Barrell hub
+    //3 things it can do:
+    //    - Keep time
+    //    - Produce clicking noise
+    //    - Adjust timing
 };
 
 struct WristWatch
 {
-
+    //5 properties:
+    //    - Case
+    //    - Band
+    //    - Hands
+    //    - Adjustment dials
+    //    - Movement
+    //3 things it can do:
+    //    - Display current time
+    //    - Measure amount of time past
+    //    - Change displayed time
 };
 /*
 =================
