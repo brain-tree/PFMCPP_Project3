@@ -542,11 +542,11 @@ Thing 9) Movement
 
 Thing 10) Wrist watch
 5 properties:
-    1) Case (int)
-    2) Band (int)
-    3) Hands (int)
-    4) Adjustment dials (double)
-    5) Movement (int)
+    1) Case
+    2) Band
+    3) Hands
+    4) Adjustment dials
+    5) Movement
 3 things it can do:
     1) Display current time
     2) Measure amount of time past
