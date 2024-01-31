@@ -664,7 +664,56 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
+struct Synthesizer
+{
 
+};
+
+struct Bicycle
+{
+
+};
+
+struct Restaurant
+{
+
+};
+
+struct Bank
+{
+
+};
+
+struct Case
+{
+
+};
+
+struct Band
+{
+
+};
+
+struct Hands
+{
+
+};
+
+
+struct AdjustmentDials
+{
+
+};
+
+struct Movement
+{
+
+};
+
+struct WristWatch
+{
+
+};
 /*
 =================
 Part 1e - Step 2: Commit
