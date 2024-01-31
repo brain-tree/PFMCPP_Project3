@@ -444,6 +444,11 @@ Thing 1) Synthesizer
     2) Show patch parameters
     3) Adjust sound
 
+struct Synthesizer
+{
+
+};
+
 Thing 2) Bicycle
 5 properties:
     1) Amount of gears (int)
@@ -455,6 +460,11 @@ Thing 2) Bicycle
     1) Move a person
     2) Shift gears
     3) Stop
+
+struct Bicycle
+{
+
+};
 
 Thing 3) Restaurant
 5 properties:
@@ -468,6 +478,11 @@ Thing 3) Restaurant
     2) Serve diners
     3) Charge money
 
+struct Restaurant
+{
+
+};
+
 Thing 4) Bank
 5 properties:
     1) Amount of money in vault (double)
@@ -479,6 +494,11 @@ Thing 4) Bank
     1) Collect money
     2) Service client
     3) Wire money
+
+struct Bank
+{
+
+};
 
 Thing 5) Case
 5 properties:
@@ -492,8 +512,8 @@ Thing 5) Case
     2) Display time
     3) Keep internal components clean
 
-    Thing 6) Band
-    5 properties:
+Thing 6) Band
+5 properties:
     1) Links (int)
     2) Lug (int)
     3) Pins (int)
@@ -503,6 +523,11 @@ Thing 5) Case
     1) Holds watch to wrist
     2) Tight to wrist
     3) Loosen on wrist
+
+struct Band
+{
+
+};
 
 Thing 7) Hands
 5 properties:
@@ -516,6 +541,11 @@ Thing 7) Hands
     2) Mark number of minutes
     3) Mark number of seconds
 
+struct Hands
+{
+
+};
+
 Thing 8) Adjustment dials
 5 properties:
     1) Crown (float)
@@ -527,6 +557,11 @@ Thing 8) Adjustment dials
     1) Change displayed time forward
     2) Change displayed time backward
     3) Activate secondary function
+
+struct AdjustmentDials
+{
+
+};
 
 Thing 9) Movement
 5 properties:
@@ -540,6 +575,11 @@ Thing 9) Movement
     2) Produce clicking noise
     3) Adjust timing
 
+struct Movement
+{
+
+};
+
 Thing 10) Wrist watch
 5 properties:
     1) Case
@@ -551,6 +591,12 @@ Thing 10) Wrist watch
     1) Display current time
     2) Measure amount of time past
     3) Change displayed time
+
+struct WristWatch
+{
+
+};
+
 */
 
 /*
