@@ -582,7 +582,7 @@ struct Movement
 
 Thing 10) Wrist watch
 5 properties:
-    1) Case
+    1) Outer Case
     2) Band
     3) Hands
     4) Adjustment dials
@@ -668,10 +668,15 @@ struct Synthesizer
 {
     //5 properties:
     //    - Number of oscillators
+    int numberOfOscillators = 3;
     //    - Number of knobs
+    int numberofKnobs = 15;
     //    - Amount of voltage per octave
+    float amountOfVoltagePerOctave = 0.5f;
     //    - Number of keys
+    int numberOfKeys = 88;
     //    - Number of digital displays
+    int numberOfDigitalDisplays = 1;
     //3 things it can do:
     //    - Make sound
     //    - Show patch parameters
@@ -682,10 +687,15 @@ struct Bicycle
 {
     //5 properties:
     //    - Amount of gears
+    int amountOfGears = 12;
     //    - Amount of brake levers
+    int amountOfBrakeLevers = 2;
     //    - Number of shifters
+    int numberOfShifters = 4;
     //    - Number of wheels
+    int numberOfWheels = 2;
     //    - Number of pedals
+    int numberOfPedals = 2;
     //3 things it can do:
     //    - Move a person
     //    - Shift gears
@@ -696,10 +706,15 @@ struct Restaurant
 {
     //5 properties:
     //    - Amount of menu items
+    int amountOfMenuItems = 90;
     //    - Name of ingredients per menu item
+    std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
     //    - Number of ovens
+    int numberOfOvens = 4;
     //    - Number of employees
+    int numberOfEmployees = 10;
     //    - Number of tables
+    int numberOfTables = 30;
     //3 things it can do:
     //    - Make food
     //    - Serve diners
@@ -710,10 +725,15 @@ struct Bank
 {
     //5 properties:
     //    - Amount of money in vault
+    double amountOfMoneyInVault = 987654.56;
     //    - Amount of armed guards
+    int amountOfArmedGuards = 4;
     //    - Number of customers in line
+    int numOfCustomersInLine = 7;
     //    - Number of tellers
+    int numOfTellers = 4;
     //    - Amount of accounts
+    float amountOfAccounts = 1355.5f;
     //3 things it can do:
     //    - Collect money
     //    - Service client
@@ -724,10 +744,15 @@ struct Case
 {
     //5 properties:
     //    - Crystal
+    int crystal = 1;
     //    - Dial ring
+    float dialRing = 10.25f;
     //    - Bezel
-    //    - Date window 
+    int bezel = 1;
+    //    - Date window
+    float dateWindow = 1201.f;
     //    - Hands
+    int hands = 2;
     //3 things it can do:
     //    - House internal components
     //    - Display time
@@ -738,10 +763,15 @@ struct Band
 {
     //5 properties:
     //    - Links
+    int links = 5;
     //    - Lug
+    int lug = 2;
     //    - Pins
+    int pins = 9;
     //    - Buckle
+    int buckle = 1;
     //    - Adustment
+    int adjustment = 1;
     //3 things it can do:
     //    - Holds watch to wrist
     //    - Tight to wrist
@@ -751,11 +781,16 @@ struct Band
 struct Hands
 {
     //5 properties:
-    //    - Hour hand 
+    //    - Hour hand
+    float hourHand = 12.f;
     //    - Second hand
+    float secondHand = 60.f;
     //    - Sweep second hand
+    double sweepSecondHand = 120.00;
     //    - Tide dial
+    double tideDial = 24.00;
     //    - Arbitrary subdial
+    float arbitraryDial = 120.f;
     //3 things it can do:
     //    - Mark number of hours
     //    - Mark number of minutes
@@ -766,10 +801,15 @@ struct AdjustmentDials
 {
     //5 properties:
     //    - Crown
+    float crown = 120.f;
     //    - Pusher 1
+    float pusher1 = 120.f;
     //    - Reset
+    int reset = 1;
     //    - Inner bezel crown
+    double innerBezelCrown = 120.00;
     //    - Pusher 2
+    double pusher2 = 60.00;
     //3 things it can do:
     //    - Change displayed time forward
     //    - Change displayed time backward
@@ -780,10 +820,15 @@ struct Movement
 {
     //5 properties:
     //    - Main wheel
+    double mainWheel = 240.00;
     //    - Fork
+    int fork = 4;
     //    - Ratchet wheel
+    double ratchetWheel = 120.00;
     //    - Safety roller
+    double safetyRoller = 60.00;
     //    - Barrell hub
+    int barrellHub = 1;
     //3 things it can do:
     //    - Keep time
     //    - Produce clicking noise
@@ -793,11 +838,16 @@ struct Movement
 struct WristWatch
 {
     //5 properties:
-    //    - Case
+    //    - Outer Case
+    int  outerCase = 1;
     //    - Band
+    int band = 1;
     //    - Hands
+    int hands = 2;
     //    - Adjustment dials
+    int adjustmentDials = 4;
     //    - Movement
+    int movement = 1;
     //3 things it can do:
     //    - Display current time
     //    - Measure amount of time past
