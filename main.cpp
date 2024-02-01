@@ -899,15 +899,15 @@ struct WristWatch
 {
     //5 properties:
     //    - Outer Case
-    int  outerCase = 1;
+    Case outerCase;
     //    - Band
-    int band = 1;
+    Band band;
     //    - Hands
-    int hands = 2;
+    Hands hands;
     //    - Adjustment dials
-    int adjustmentDials = 4;
+    AdjustmentDials adjustmentDials;
     //    - Movement
-    int movement = 1;
+    Movement movement;
     //3 things it can do:
     //    - Display current time
     float displayCurrentTime(float currentTime); //returns current time
