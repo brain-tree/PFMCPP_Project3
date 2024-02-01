@@ -664,258 +664,7 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
-struct Synthesizer
-{
-    //5 properties:
-    //    - Number of oscillators
-    int numberOfOscillators = 3;
-    //    - Number of knobs
-    int numberofKnobs = 15;
-    //    - Amount of voltage per octave
-    float amountOfVoltagePerOctave = 0.5f;
-    //    - Number of keys
-    int numberOfKeys = 88;
-    //    - Number of digital displays
-    int numberOfDigitalDisplays = 1;
 
-    struct Keyboard
-    {
-        bool hasEightyEightKeys = true;
-        float midiVelocityEnabled = 127.f;
-        int numOfBlackKeys = 36;
-        std::string synthCompany = "Nord";
-        std::string model = "Lead";
-
-        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
-        void releaseKey(float releaseTime, bool usesADSR = true);
-        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of keys pressed
-    };
-    
-    //3 things it can do:
-    //    - Make sound
-    void makeSound(Keyboard keyboard);
-    //    - Show patch parameters
-    void showPatchParameters();
-    //    - Adjust sound
-    float changeVoltage(float amountOfVoltage, Keyboard keyboard); //returns the current voltage value
-
-    Keyboard eventsOnSynth;
-};
-
-struct Bicycle
-{
-    //5 properties:
-    //    - Amount of gears
-    int amountOfGears = 12;
-    //    - Amount of brake levers
-    int amountOfBrakeLevers = 2;
-    //    - Number of shifters
-    int numberOfShifters = 4;
-    //    - Number of wheels
-    int numberOfWheels = 2;
-    //    - Number of pedals
-    int numberOfPedals = 2;
-    //3 things it can do:
-    //    - Move a person
-    void moveBicycle();
-    //    - Shift gears
-    void shiftGears();
-    //    - Stop
-    void stopBicycle();
-};
-
-struct Restaurant
-{
-    //5 properties:
-    //    - Amount of menu items
-    int amountOfMenuItems = 90;
-    //    - Name of ingredients per menu item
-    std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
-    //    - Number of ovens
-    int numberOfOvens = 4;
-    //    - Number of employees
-    int numberOfEmployees = 10;
-    //    - Number of tables
-    int numberOfTables = 30;
-    
-    struct Kitchen
-    {
-        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
-        int numOfCooks = 3;
-        int numOfDeepFryers = 2;
-        bool greaseCollected = true;
-        float gallonsOfVegOil = 20.f;
-        std::string orderName = "Lisa";
-
-        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
-        void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
-        double annualRevenue(float annualProfit); //3) returns the annual revenue
-    };
-    
-    //3 things it can do:
-    //    - Make food
-    void makeFood(Kitchen kitchen);
-    //    - Serve diners
-    void serveDiners(Kitchen kitchen);
-    //    - Charge money
-    float chargeMoney(float moneyOfMeal); //returns the amount of the bill
-
-    Kitchen patronsBeingServed;
-};
-
-struct Bank
-{
-    //5 properties:
-    //    - Amount of money in vault
-    double amountOfMoneyInVault = 987654.56;
-    //    - Amount of armed guards
-    int amountOfArmedGuards = 4;
-    //    - Number of customers in line
-    int numOfCustomersInLine = 7;
-    //    - Number of tellers
-    int numOfTellers = 4;
-    //    - Amount of accounts
-    float amountOfAccounts = 1355.5f;
-    //3 things it can do:
-    //    - Collect money
-    double collectMoney(double amountOfMoneyCollected); //returns amount of money collected
-    //    - Service client
-    void serviceClient();
-    //    - Wire money
-    float wireMoney(float amountOfMoneyWired); //returns amount of money wired
-};
-
-struct Case
-{
-    //5 properties:
-    //    - Crystal
-    int crystal = 1;
-    //    - Dial ring
-    float dialRing = 10.25f;
-    //    - Bezel
-    int bezel = 1;
-    //    - Date window
-    float dateWindow = 1201.f;
-    //    - Hands
-    int hands = 2;
-    //3 things it can do:
-    //    - House internal components
-    void houseInternalComponents();
-    //    - Display time
-    float displayTime(float currentTime); //returns current time displayed
-    //    - Keep internal components clean
-    void keepInternalPartsClean();
-};
-
-struct Band
-{
-    //5 properties:
-    //    - Links
-    int links = 5;
-    //    - Lug
-    int lug = 2;
-    //    - Pins
-    int pins = 9;
-    //    - Buckle
-    int buckle = 1;
-    //    - Adustment
-    int adjustment = 1;
-    //3 things it can do:
-    //    - Holds watch to wrist
-    void holdWatchToWrist();
-    //    - Tight to wrist
-    void adjustBandTightness();
-    //    - Loosen on wrist
-    void adjustBandLooseness();
-};
-
-struct Hands
-{
-    //5 properties:
-    //    - Hour hand
-    float hourHand = 12.f;
-    //    - Second hand
-    float secondHand = 60.f;
-    //    - Sweep second hand
-    double sweepSecondHand = 120.00;
-    //    - Tide dial
-    double tideDial = 24.00;
-    //    - Arbitrary subdial
-    float arbitraryDial = 120.f;
-    //3 things it can do:
-    //    - Mark number of hours
-    float displayHours(float hours); //returns current hour
-    //    - Mark number of minutes
-    float displayMinutes(float minutes); //returns current minute
-    //    - Mark number of seconds
-    float displaySeconds(float seconds); //returns current second
-};
-
-struct AdjustmentDials
-{
-    //5 properties:
-    //    - Crown
-    float crown = 120.f;
-    //    - Pusher 1
-    float pusher1 = 120.f;
-    //    - Reset
-    int reset = 1;
-    //    - Inner bezel crown
-    double innerBezelCrown = 120.00;
-    //    - Pusher 2
-    double pusher2 = 60.00;
-    //3 things it can do:
-    //    - Change displayed time forward
-    float changeTimeForward(float time); //returns new time
-    //    - Change displayed time backward
-    float changeTimeBackward(float time); //returns new time
-    //    - Activate secondary function
-    void useAuxiliaryFunction();
-};
-
-struct Movement
-{
-    //5 properties:
-    //    - Main wheel
-    double mainWheel = 240.00;
-    //    - Fork
-    int fork = 4;
-    //    - Ratchet wheel
-    double ratchetWheel = 120.00;
-    //    - Safety roller
-    double safetyRoller = 60.00;
-    //    - Barrell hub
-    int barrellHub = 1;
-    //3 things it can do:
-    //    - Keep time
-    void keepTime();
-    //    - Produce clicking noise
-    void makeClickSound();
-    //    - Adjust timing
-    void adjustTiming();
-};
-
-struct WristWatch
-{
-    //5 properties:
-    //    - Outer Case
-    Case outerCase;
-    //    - Band
-    Band band;
-    //    - Hands
-    Hands hands;
-    //    - Adjustment dials
-    AdjustmentDials adjustmentDials;
-    //    - Movement
-    Movement movement;
-    //3 things it can do:
-    //    - Display current time
-    float displayCurrentTime(float currentTime); //returns current time
-    //    - Measure amount of time past
-    double measureTimePast(double time); //returns amount of time past
-    //    - Change displayed time
-    void changeDisplayedTime();
-};
 /*
 =================
 Part 1e - Step 2: Commit
@@ -1308,7 +1057,258 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct Synthesizer
+{
+    //5 properties:
+    //    - Number of oscillators
+    int numberOfOscillators = 3;
+    //    - Number of knobs
+    int numberofKnobs = 15;
+    //    - Amount of voltage per octave
+    float amountOfVoltagePerOctave = 0.5f;
+    //    - Number of keys
+    int numberOfKeys = 88;
+    //    - Number of digital displays
+    int numberOfDigitalDisplays = 1;
 
+    struct Keyboard
+    {
+        bool hasEightyEightKeys = true;
+        float midiVelocityEnabled = 127.f;
+        int numOfBlackKeys = 36;
+        std::string synthCompany = "Nord";
+        std::string model = "Lead";
+
+        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
+        void releaseKey(float releaseTime, bool usesADSR = true);
+        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of keys pressed
+    };
+
+    //3 things it can do:
+    //    - Make sound
+    void makeSound(Keyboard keyboard);
+    //    - Show patch parameters
+    void showPatchParameters();
+    //    - Adjust sound
+    float changeVoltage(float amountOfVoltage, Keyboard keyboard); //returns the current voltage value
+
+    Keyboard eventsOnSynth;
+};
+
+struct Bicycle
+{
+    //5 properties:
+    //    - Amount of gears
+    int amountOfGears = 12;
+    //    - Amount of brake levers
+    int amountOfBrakeLevers = 2;
+    //    - Number of shifters
+    int numberOfShifters = 4;
+    //    - Number of wheels
+    int numberOfWheels = 2;
+    //    - Number of pedals
+    int numberOfPedals = 2;
+    //3 things it can do:
+    //    - Move a person
+    void moveBicycle();
+    //    - Shift gears
+    void shiftGears();
+    //    - Stop
+    void stopBicycle();
+};
+
+struct Restaurant
+{
+    //5 properties:
+    //    - Amount of menu items
+    int amountOfMenuItems = 90;
+    //    - Name of ingredients per menu item
+    std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
+    //    - Number of ovens
+    int numberOfOvens = 4;
+    //    - Number of employees
+    int numberOfEmployees = 10;
+    //    - Number of tables
+    int numberOfTables = 30;
+
+    struct Kitchen
+    {
+        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
+        int numOfCooks = 3;
+        int numOfDeepFryers = 2;
+        bool greaseCollected = true;
+        float gallonsOfVegOil = 20.f;
+        std::string orderName = "Lisa";
+
+        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
+        void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
+        double annualRevenue(float annualProfit); //3) returns the annual revenue
+    };
+
+    //3 things it can do:
+    //    - Make food
+    void makeFood(Kitchen kitchen);
+    //    - Serve diners
+    void serveDiners(Kitchen kitchen);
+    //    - Charge money
+    float chargeMoney(float moneyOfMeal); //returns the amount of the bill
+
+    Kitchen patronsBeingServed;
+};
+
+struct Bank
+{
+    //5 properties:
+    //    - Amount of money in vault
+    double amountOfMoneyInVault = 987654.56;
+    //    - Amount of armed guards
+    int amountOfArmedGuards = 4;
+    //    - Number of customers in line
+    int numOfCustomersInLine = 7;
+    //    - Number of tellers
+    int numOfTellers = 4;
+    //    - Amount of accounts
+    float amountOfAccounts = 1355.5f;
+    //3 things it can do:
+    //    - Collect money
+    double collectMoney(double amountOfMoneyCollected); //returns amount of money collected
+    //    - Service client
+    void serviceClient();
+    //    - Wire money
+    float wireMoney(float amountOfMoneyWired); //returns amount of money wired
+};
+
+struct Case
+{
+    //5 properties:
+    //    - Crystal
+    int crystal = 1;
+    //    - Dial ring
+    float dialRing = 10.25f;
+    //    - Bezel
+    int bezel = 1;
+    //    - Date window
+    float dateWindow = 1201.f;
+    //    - Hands
+    int hands = 2;
+    //3 things it can do:
+    //    - House internal components
+    void houseInternalComponents();
+    //    - Display time
+    float displayTime(float currentTime); //returns current time displayed
+    //    - Keep internal components clean
+    void keepInternalPartsClean();
+};
+
+struct Band
+{
+    //5 properties:
+    //    - Links
+    int links = 5;
+    //    - Lug
+    int lug = 2;
+    //    - Pins
+    int pins = 9;
+    //    - Buckle
+    int buckle = 1;
+    //    - Adustment
+    int adjustment = 1;
+    //3 things it can do:
+    //    - Holds watch to wrist
+    void holdWatchToWrist();
+    //    - Tight to wrist
+    void adjustBandTightness();
+    //    - Loosen on wrist
+    void adjustBandLooseness();
+};
+
+struct Hands
+{
+    //5 properties:
+    //    - Hour hand
+    float hourHand = 12.f;
+    //    - Second hand
+    float secondHand = 60.f;
+    //    - Sweep second hand
+    double sweepSecondHand = 120.00;
+    //    - Tide dial
+    double tideDial = 24.00;
+    //    - Arbitrary subdial
+    float arbitraryDial = 120.f;
+    //3 things it can do:
+    //    - Mark number of hours
+    float displayHours(float hours); //returns current hour
+    //    - Mark number of minutes
+    float displayMinutes(float minutes); //returns current minute
+    //    - Mark number of seconds
+    float displaySeconds(float seconds); //returns current second
+};
+
+struct AdjustmentDials
+{
+    //5 properties:
+    //    - Crown
+    float crown = 120.f;
+    //    - Pusher 1
+    float pusher1 = 120.f;
+    //    - Reset
+    int reset = 1;
+    //    - Inner bezel crown
+    double innerBezelCrown = 120.00;
+    //    - Pusher 2
+    double pusher2 = 60.00;
+    //3 things it can do:
+    //    - Change displayed time forward
+    float changeTimeForward(float time); //returns new time
+    //    - Change displayed time backward
+    float changeTimeBackward(float time); //returns new time
+    //    - Activate secondary function
+    void useAuxiliaryFunction();
+};
+
+struct Movement
+{
+    //5 properties:
+    //    - Main wheel
+    double mainWheel = 240.00;
+    //    - Fork
+    int fork = 4;
+    //    - Ratchet wheel
+    double ratchetWheel = 120.00;
+    //    - Safety roller
+    double safetyRoller = 60.00;
+    //    - Barrell hub
+    int barrellHub = 1;
+    //3 things it can do:
+    //    - Keep time
+    void keepTime();
+    //    - Produce clicking noise
+    void makeClickSound();
+    //    - Adjust timing
+    void adjustTiming();
+};
+
+struct WristWatch
+{
+    //5 properties:
+    //    - Outer Case
+    Case outerCase;
+    //    - Band
+    Band band;
+    //    - Hands
+    Hands hands;
+    //    - Adjustment dials
+    AdjustmentDials adjustmentDials;
+    //    - Movement
+    Movement movement;
+    //3 things it can do:
+    //    - Display current time
+    float displayCurrentTime(float currentTime); //returns current time
+    //    - Measure amount of time past
+    double measureTimePast(double time); //returns amount of time past
+    //    - Change displayed time
+    void changeDisplayedTime();
+};
 
 
 
