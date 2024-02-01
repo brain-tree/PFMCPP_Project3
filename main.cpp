@@ -683,21 +683,23 @@ struct Synthesizer
         bool hasEightyEightKeys = true;
         float midiVelocityEnabled = 127.f;
         int numOfBlackKeys = 36;
-        std::string manufacturer = "Nord";
+        std::string synthCompany = "Nord";
         std::string model = "Lead";
 
         void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
         void releaseKey(float releaseTime, bool usesADSR = true);
-        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of midi events
+        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of keys pressed
     };
     
     //3 things it can do:
     //    - Make sound
-    void makeSound();
+    void makeSound(Keyboard keyboard);
     //    - Show patch parameters
     void showPatchParameters();
     //    - Adjust sound
-    float changeVoltage(float amountOfVoltage); //returns the current voltage value
+    float changeVoltage(float amountOfVoltage, Keyboard keyboard); //returns the current voltage value
+
+    Keyboard eventsOnSynth;
 };
 
 struct Bicycle
@@ -752,11 +754,13 @@ struct Restaurant
     
     //3 things it can do:
     //    - Make food
-    void makeFood();
+    void makeFood(Kitchen kitchen);
     //    - Serve diners
-    void serveDiners();
+    void serveDiners(Kitchen kitchen);
     //    - Charge money
     float chargeMoney(float moneyOfMeal); //returns the amount of the bill
+
+    Kitchen patronsBeingServed;
 };
 
 struct Bank
@@ -1108,7 +1112,7 @@ Part 1e - Step 11: Assignment
     - You'll write definitions/implementations for these functions in Project3 Part2
     - you'll call each of these functions in Project3 part3
     - You can use the nested classes you just created.  see the example code below
-    - You can also declare instances of these nested classes as member variables, but the intended usage must make sense and must compile without errors.  see the note below the example code. 
+    - You can also declare instances of these nested classes as member variables, but the intended usage must make sense and must compile without errors.  see the note below the example code.
 
 Remember: in C++ you cannot use something before it is declared. 
 The compiler parses the files from top to bottom.
@@ -1147,7 +1151,7 @@ struct CarWash
     //Notice that `Car car` is written AFTER `struct Car { ... };
 
     //charge customer
-    float chargeCustomer(float discountPercentage); 
+    float chargeCustomer(float discountPercentage);
     //detail interior
     void detailInterior(Car car);
     
@@ -1161,7 +1165,7 @@ struct CarWash
 
     It makes sense to pass a Car to the function 'washAndWaxCar' because car washes service MANY cars
     However, they only service ONE car at a time.
-    the carBeingServiced's value would change every time you wash and wax the car. 
+    the carBeingServiced's value would change every time you wash and wax the car.
 
     I see many students who write code emulating this format, but their usage does not make logical sense.  
     Consider the following snippet:
