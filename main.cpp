@@ -677,6 +677,20 @@ struct Synthesizer
     int numberOfKeys = 88;
     //    - Number of digital displays
     int numberOfDigitalDisplays = 1;
+
+    struct Keyboard
+    {
+        bool hasEightyEightKeys = true;
+        float midiVelocityEnabled = 127.f;
+        int numOfBlackKeys = 36;
+        std::string manufacturer = "Nord";
+        std::string model = "Lead";
+
+        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
+        void releaseKey(float releaseTime, bool usesADSR = true);
+        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of midi events
+    };
+    
     //3 things it can do:
     //    - Make sound
     void makeSound();
@@ -721,6 +735,21 @@ struct Restaurant
     int numberOfEmployees = 10;
     //    - Number of tables
     int numberOfTables = 30;
+    
+    struct Kitchen
+    {
+        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
+        int numOfCooks = 3;
+        int numOfDeepFryers = 2;
+        bool greaseCollected = true;
+        float gallonsOfVegOil = 20.f;
+        std::string orderName = "Lisa";
+
+        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
+        void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
+        double annualRevenue(float annualProfit); //3) returns the annual revenue
+    };
+    
     //3 things it can do:
     //    - Make food
     void makeFood();
