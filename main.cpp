@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) Menu navigation buttons
+            4) Horn
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) Turn the car left or right
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) Speedometer
+            2) Odometer
+            3) Fuel gauge 
+            4) Outside/inside temperature
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Display current speed
+            2) Display current amount of miles on the engine
+            3) Show gear status (parking, third gear, etc)
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Temperature dial
+            2) Air mode dial
+            3) Air conditioner button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Change temperature
+            2) Change ventilation mode
+            3) Turn on air conditioning
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) A digital screen
+            2) Car status info
+            3) Bluetooth connectivity
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) Display car status info
+            2) Turn screen on/off
+            3) Connect to bluetooth device
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) Backrest
+            2) Headrest
+            3) Seat adjustment levers
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) Hold head
+            2) Change seat position
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -434,65 +378,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -545,12 +431,173 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+Thing 1) Synthesizer
+5 properties:
+    1) Number of oscillators (int)
+    2) Number of knobs (int)
+    3) Amount of voltage per octave (float)
+    4) Number of keys (int)
+    5) Number of digital displays (int)
+3 things it can do:
+    1) Make sound
+    2) Show patch parameters
+    3) Adjust sound
 
+struct Synthesizer
+{
 
+};
 
+Thing 2) Bicycle
+5 properties:
+    1) Amount of gears (int)
+    2) Amount of brake levers (int)
+    3) Number of shifters (int)
+    4) Number of wheels (int)
+    5) Number of pedals (int)
+3 things it can do:
+    1) Move a person
+    2) Shift gears
+    3) Stop
 
+struct Bicycle
+{
 
+};
 
+Thing 3) Restaurant
+5 properties:
+    1) Amount of menu items (int)
+    2) Name of ingredients per menu item (std::string)
+    3) Number of ovens (int)
+    4) Number of employees (int)
+    5) Number of tables (int)
+3 things it can do:
+    1) Make food
+    2) Serve diners
+    3) Charge money
+
+struct Restaurant
+{
+
+};
+
+Thing 4) Bank
+5 properties:
+    1) Amount of money in vault (double)
+    2) Amount of armed guards (int)
+    3) Number of customers in line (int)
+    4) Number of tellers (int)
+    5) Amount of accounts (float)
+3 things it can do:
+    1) Collect money
+    2) Service client
+    3) Wire money
+
+struct Bank
+{
+
+};
+
+Thing 5) Case
+5 properties:
+    1) Crystal (int)
+    2) Dial ring (float)
+    3) Bezel (int)
+    4) Date window (float)
+    5) Hands (int)
+3 things it can do:
+    1) House internal components
+    2) Display time
+    3) Keep internal components clean
+
+Thing 6) Band
+5 properties:
+    1) Links (int)
+    2) Lug (int)
+    3) Pins (int)
+    4) Buckle (int)
+    5) Adustment (int)
+3 things it can do:
+    1) Holds watch to wrist
+    2) Tight to wrist
+    3) Loosen on wrist
+
+struct Band
+{
+
+};
+
+Thing 7) Hands
+5 properties:
+    1) Hour hand (float)
+    2) Second hand (float)
+    3) Sweep second hand (double)
+    4) Tide dial (double)
+    5) Arbitrary subdial (float)
+3 things it can do:
+    1) Mark number of hours
+    2) Mark number of minutes
+    3) Mark number of seconds
+
+struct Hands
+{
+
+};
+
+Thing 8) Adjustment dials
+5 properties:
+    1) Crown (float)
+    2) Pusher 1 (float)
+    3) Reset (int)
+    4) Inner bezel crown (double)
+    5) Pusher 2 (double)
+3 things it can do:
+    1) Change displayed time forward
+    2) Change displayed time backward
+    3) Activate secondary function
+
+struct AdjustmentDials
+{
+
+};
+
+Thing 9) Movement
+5 properties:
+    1) Main wheel (double)
+    2) Fork (int)
+    3) Ratchet wheel (double)
+    4) Safety roller (double)
+    5) Barrell hub (int)
+3 things it can do:
+    1) Keep time
+    2) Produce clicking noise
+    3) Adjust timing
+
+struct Movement
+{
+
+};
+
+Thing 10) Wrist watch
+5 properties:
+    1) Outer Case
+    2) Band
+    3) Hands
+    4) Adjustment dials
+    5) Movement
+3 things it can do:
+    1) Display current time
+    2) Measure amount of time past
+    3) Change displayed time
+
+struct WristWatch
+{
+
+};
+
+*/
 
 /*
 =================
@@ -814,7 +861,7 @@ Part 1e - Step 11: Assignment
     - You'll write definitions/implementations for these functions in Project3 Part2
     - you'll call each of these functions in Project3 part3
     - You can use the nested classes you just created.  see the example code below
-    - You can also declare instances of these nested classes as member variables, but the intended usage must make sense and must compile without errors.  see the note below the example code. 
+    - You can also declare instances of these nested classes as member variables, but the intended usage must make sense and must compile without errors.  see the note below the example code.
 
 Remember: in C++ you cannot use something before it is declared. 
 The compiler parses the files from top to bottom.
@@ -853,7 +900,7 @@ struct CarWash
     //Notice that `Car car` is written AFTER `struct Car { ... };
 
     //charge customer
-    float chargeCustomer(float discountPercentage); 
+    float chargeCustomer(float discountPercentage);
     //detail interior
     void detailInterior(Car car);
     
@@ -867,7 +914,7 @@ struct CarWash
 
     It makes sense to pass a Car to the function 'washAndWaxCar' because car washes service MANY cars
     However, they only service ONE car at a time.
-    the carBeingServiced's value would change every time you wash and wax the car. 
+    the carBeingServiced's value would change every time you wash and wax the car.
 
     I see many students who write code emulating this format, but their usage does not make logical sense.  
     Consider the following snippet:
@@ -1010,7 +1057,258 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct Synthesizer
+{
+    //5 properties:
+    //    - Number of oscillators
+    int numberOfOscillators = 3;
+    //    - Number of knobs
+    int numberofKnobs = 15;
+    //    - Amount of voltage per octave
+    float amountOfVoltagePerOctave = 0.5f;
+    //    - Number of keys
+    int numberOfKeys = 88;
+    //    - Number of digital displays
+    int numberOfDigitalDisplays = 1;
 
+    struct Keyboard
+    {
+        bool hasEightyEightKeys = true;
+        float midiVelocityEnabled = 127.f;
+        int numOfBlackKeys = 36;
+        std::string synthCompany = "Nord";
+        std::string model = "Lead";
+
+        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
+        void releaseKey(float releaseTime, bool usesADSR = true);
+        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of keys pressed
+    };
+
+    //3 things it can do:
+    //    - Make sound
+    void makeSound(Keyboard keyboard);
+    //    - Show patch parameters
+    void showPatchParameters();
+    //    - Adjust sound
+    float changeVoltage(float amountOfVoltage, Keyboard keyboard); //returns the current voltage value
+
+    Keyboard eventsOnSynth;
+};
+
+struct Bicycle
+{
+    //5 properties:
+    //    - Amount of gears
+    int amountOfGears = 12;
+    //    - Amount of brake levers
+    int amountOfBrakeLevers = 2;
+    //    - Number of shifters
+    int numberOfShifters = 4;
+    //    - Number of wheels
+    int numberOfWheels = 2;
+    //    - Number of pedals
+    int numberOfPedals = 2;
+    //3 things it can do:
+    //    - Move a person
+    void moveBicycle();
+    //    - Shift gears
+    void shiftGears();
+    //    - Stop
+    void stopBicycle();
+};
+
+struct Restaurant
+{
+    //5 properties:
+    //    - Amount of menu items
+    int amountOfMenuItems = 90;
+    //    - Name of ingredients per menu item
+    std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
+    //    - Number of ovens
+    int numberOfOvens = 4;
+    //    - Number of employees
+    int numberOfEmployees = 10;
+    //    - Number of tables
+    int numberOfTables = 30;
+
+    struct Kitchen
+    {
+        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
+        int numOfCooks = 3;
+        int numOfDeepFryers = 2;
+        bool greaseCollected = true;
+        float gallonsOfVegOil = 20.f;
+        std::string orderName = "Lisa";
+
+        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
+        void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
+        double annualRevenue(float annualProfit); //3) returns the annual revenue
+    };
+
+    //3 things it can do:
+    //    - Make food
+    void makeFood(Kitchen kitchen);
+    //    - Serve diners
+    void serveDiners(Kitchen kitchen);
+    //    - Charge money
+    float chargeMoney(float moneyOfMeal); //returns the amount of the bill
+
+    Kitchen patronsBeingServed;
+};
+
+struct Bank
+{
+    //5 properties:
+    //    - Amount of money in vault
+    double amountOfMoneyInVault = 987654.56;
+    //    - Amount of armed guards
+    int amountOfArmedGuards = 4;
+    //    - Number of customers in line
+    int numOfCustomersInLine = 7;
+    //    - Number of tellers
+    int numOfTellers = 4;
+    //    - Amount of accounts
+    float amountOfAccounts = 1355.5f;
+    //3 things it can do:
+    //    - Collect money
+    double collectMoney(double amountOfMoneyCollected); //returns amount of money collected
+    //    - Service client
+    void serviceClient();
+    //    - Wire money
+    float wireMoney(float amountOfMoneyWired); //returns amount of money wired
+};
+
+struct Case
+{
+    //5 properties:
+    //    - Crystal
+    int crystal = 1;
+    //    - Dial ring
+    float dialRing = 10.25f;
+    //    - Bezel
+    int bezel = 1;
+    //    - Date window
+    float dateWindow = 1201.f;
+    //    - Hands
+    int hands = 2;
+    //3 things it can do:
+    //    - House internal components
+    void houseInternalComponents();
+    //    - Display time
+    float displayTime(float currentTime); //returns current time displayed
+    //    - Keep internal components clean
+    void keepInternalPartsClean();
+};
+
+struct Band
+{
+    //5 properties:
+    //    - Links
+    int links = 5;
+    //    - Lug
+    int lug = 2;
+    //    - Pins
+    int pins = 9;
+    //    - Buckle
+    int buckle = 1;
+    //    - Adustment
+    int adjustment = 1;
+    //3 things it can do:
+    //    - Holds watch to wrist
+    void holdWatchToWrist();
+    //    - Tight to wrist
+    void adjustBandTightness();
+    //    - Loosen on wrist
+    void adjustBandLooseness();
+};
+
+struct Hands
+{
+    //5 properties:
+    //    - Hour hand
+    float hourHand = 12.f;
+    //    - Second hand
+    float secondHand = 60.f;
+    //    - Sweep second hand
+    double sweepSecondHand = 120.00;
+    //    - Tide dial
+    double tideDial = 24.00;
+    //    - Arbitrary subdial
+    float arbitraryDial = 120.f;
+    //3 things it can do:
+    //    - Mark number of hours
+    float displayHours(float hours); //returns current hour
+    //    - Mark number of minutes
+    float displayMinutes(float minutes); //returns current minute
+    //    - Mark number of seconds
+    float displaySeconds(float seconds); //returns current second
+};
+
+struct AdjustmentDials
+{
+    //5 properties:
+    //    - Crown
+    float crown = 120.f;
+    //    - Pusher 1
+    float pusher1 = 120.f;
+    //    - Reset
+    int reset = 1;
+    //    - Inner bezel crown
+    double innerBezelCrown = 120.00;
+    //    - Pusher 2
+    double pusher2 = 60.00;
+    //3 things it can do:
+    //    - Change displayed time forward
+    float changeTimeForward(float time); //returns new time
+    //    - Change displayed time backward
+    float changeTimeBackward(float time); //returns new time
+    //    - Activate secondary function
+    void useAuxiliaryFunction();
+};
+
+struct Movement
+{
+    //5 properties:
+    //    - Main wheel
+    double mainWheel = 240.00;
+    //    - Fork
+    int fork = 4;
+    //    - Ratchet wheel
+    double ratchetWheel = 120.00;
+    //    - Safety roller
+    double safetyRoller = 60.00;
+    //    - Barrell hub
+    int barrellHub = 1;
+    //3 things it can do:
+    //    - Keep time
+    void keepTime();
+    //    - Produce clicking noise
+    void makeClickSound();
+    //    - Adjust timing
+    void adjustTiming();
+};
+
+struct WristWatch
+{
+    //5 properties:
+    //    - Outer Case
+    Case outerCase;
+    //    - Band
+    Band band;
+    //    - Hands
+    Hands hands;
+    //    - Adjustment dials
+    AdjustmentDials adjustmentDials;
+    //    - Movement
+    Movement movement;
+    //3 things it can do:
+    //    - Display current time
+    float displayCurrentTime(float currentTime); //returns current time
+    //    - Measure amount of time past
+    double measureTimePast(double time); //returns amount of time past
+    //    - Change displayed time
+    void changeDisplayedTime();
+};
 
 
 
