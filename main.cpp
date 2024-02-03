@@ -223,6 +223,21 @@ int Synthesizer::Keyboard::getNumOfKeysPressed(int numOfMidiEvents)
     return numOfMidiEvents;
 }
 
+void Synthesizer::makeSound(Keyboard keyboard)
+{
+    keyboard.pushKey(0.5f, 10.f, true);
+}
+
+void Synthesizer::showPatchParameters()
+{
+    numberOfKeys -= 3;
+}
+
+float Synthesizer::changeVoltage(float amountOfVoltage, Keyboard keyboard)
+{
+    return amountOfVoltagePerOctave = amountOfVoltage + keyboard.midiVelocityEnabled;
+}
+
 struct Bicycle
 {
     int amountOfGears = 12;
