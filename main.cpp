@@ -245,6 +245,7 @@ struct Bicycle
     int numberOfShifters = 4;
     int numberOfWheels = 2;
     int numberOfPedals = 2;
+
     void moveBicycle();
     void shiftGears();
     void stopBicycle();
@@ -280,10 +281,11 @@ struct Restaurant
         bool greaseCollected = true;
         float gallonsOfVegOil = 20.f;
         std::string orderName = "Lisa";
+        double totalAmountOfOil = 100.00;
 
-        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
+        void fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
         void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
-        double annualRevenue(float annualProfit);
+        double annualRevenue(double annualProfit);
     };
 
     void makeFood(Kitchen kitchen);
@@ -293,6 +295,36 @@ struct Restaurant
     Kitchen patronsBeingServed;
 };
 
+void Restaurant::Kitchen::fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon, bool oilNeedsReplaced)
+{
+    totalAmountOfOil = amountOfOil - costOfVegOilPerGallon - oilNeedsReplaced;
+}
+
+void Restaurant::Kitchen::printOrderTicket(int orderNumber, bool hasSpecialInstructions)
+{
+    numOfCooks = orderNumber + hasSpecialInstructions;
+}
+
+double Restaurant::Kitchen::annualRevenue(double annualProfit)
+{
+    return annualProfit;
+}
+
+void Restaurant::makeFood(Kitchen kitchen)
+{
+    amountOfMenuItems = kitchen.numOfCooks + kitchen.numOfDeepFryers;
+}
+
+void Restaurant::serveDiners(Kitchen kitchen)
+{
+    numberOfEmployees = kitchen.numOfCooks + kitchen.numOfDeepFryers;
+}
+
+float Restaurant::chargeMoney(float moneyOfMeal)
+{
+    return moneyOfMeal;
+}
+
 struct Bank
 {
     double amountOfMoneyInVault = 987654.56;
@@ -300,10 +332,26 @@ struct Bank
     int numOfCustomersInLine = 7;
     int numOfTellers = 4;
     float amountOfAccounts = 1355.5f;
+
     double collectMoney(double amountOfMoneyCollected);
     void serviceClient();
     float wireMoney(float amountOfMoneyWired);
 };
+
+double Bank::collectMoney(double amountOfMoneyCollected)
+{
+    return amountOfMoneyCollected;
+}
+
+void Bank::serviceClient()
+{
+    std::cout << "Client is being served.\n";
+}
+
+float Bank::wireMoney(float amountOfMoneyWired)
+{
+    return amountOfMoneyWired;
+}
 
 struct Case
 {
@@ -312,10 +360,26 @@ struct Case
     int bezel = 1;
     float dateWindow = 1201.f;
     int hands = 2;
+
     void houseInternalComponents();
     float displayTime(float currentTime);
     void keepInternalPartsClean();
 };
+
+void Case::houseInternalComponents()
+{
+    std::cout << "Internal components are housed.\n";
+}
+
+float Case::displayTime(float currentTime)
+{
+    return currentTime;
+}
+
+void Case::keepInternalPartsClean()
+{
+    std::cout << "Internal parts are nice and clean.\n";
+}
 
 struct Band
 {
@@ -324,6 +388,7 @@ struct Band
     int pins = 9;
     int buckle = 1;
     int adjustment = 1;
+
     void holdWatchToWrist();
     void adjustBandTightness();
     void adjustBandLooseness();
@@ -351,10 +416,26 @@ struct Hands
     double sweepSecondHand = 120.00;
     double tideDial = 24.00;
     float arbitraryDial = 120.f;
+
     float displayHours(float hours);
     float displayMinutes(float minutes);
     float displaySeconds(float seconds);
 };
+
+float Hands::displayHours(float hours)
+{
+    return hours;
+}
+
+float Hands::displayMinutes(float minutes)
+{
+    return minutes;
+}
+
+float Hands::displaySeconds(float seconds)
+{
+    return seconds;
+}
 
 struct AdjustmentDials
 {
@@ -363,10 +444,26 @@ struct AdjustmentDials
     int reset = 1;
     double innerBezelCrown = 120.00;
     double pusher2 = 60.00;
+
     float changeTimeForward(float time);
     float changeTimeBackward(float time);
     void useAuxiliaryFunction();
 };
+
+float AdjustmentDials::changeTimeForward(float time)
+{
+    return time + 1.f;
+}
+
+float AdjustmentDials::changeTimeBackward(float time)
+{
+    return time - 1.f;
+}
+
+void AdjustmentDials::useAuxiliaryFunction()
+{
+    std::cout << "Some kind of secondary function is being used.\n";
+}
 
 struct Movement
 {
@@ -375,6 +472,7 @@ struct Movement
     double ratchetWheel = 120.00;
     double safetyRoller = 60.00;
     int barrellHub = 1;
+
     void keepTime();
     void makeClickSound();
     void adjustTiming();
@@ -402,10 +500,26 @@ struct WristWatch
     Hands hands;
     AdjustmentDials adjustmentDials;
     Movement movement;
+
     float displayCurrentTime(float currentTime);
     double measureTimePast(double time);
     void changeDisplayedTime();
 };
+
+float WristWatch::displayCurrentTime(float currentTime)
+{
+    return currentTime;
+}
+
+double WristWatch::measureTimePast(double time)
+{
+    return time;
+}
+
+void WristWatch::changeDisplayedTime()
+{
+    std::cout << "Time has been changed.\n";
+}
 
 
 
