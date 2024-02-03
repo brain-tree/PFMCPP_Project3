@@ -196,7 +196,7 @@ struct Synthesizer
         std::string synthCompany = "Nord";
         std::string model = "Lead";
 
-        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
+        void pushKey(float midiVelocity, float polyphony = 10.f, bool afterTouch = true);
         void releaseKey(float releaseTime, bool usesADSR = true);
         int getNumOfKeysPressed(int numOfMidiEvents);
     };
@@ -207,6 +207,21 @@ struct Synthesizer
 
     Keyboard eventsOnSynth;
 };
+
+void Synthesizer::Keyboard::pushKey(float midiVelocityPushed, float morePolyphony, bool afterTouched)
+{
+    midiVelocityEnabled = midiVelocityPushed - morePolyphony - afterTouched;
+}
+
+void Synthesizer::Keyboard::releaseKey(float releasedTime, bool usedADSR)
+{
+    midiVelocityEnabled = releasedTime - usedADSR;
+}
+
+int Synthesizer::Keyboard::getNumOfKeysPressed(int numOfMidiEvents)
+{
+    return numOfMidiEvents;
+}
 
 struct Bicycle
 {
