@@ -250,6 +250,21 @@ struct Bicycle
     void stopBicycle();
 };
 
+void Bicycle::moveBicycle()
+{
+    std::cout << "Bicycle is moving!\n";
+}
+
+void Bicycle::shiftGears()
+{
+    std::cout << "Gears are being shifted!\n";
+}
+
+void Bicycle::stopBicycle()
+{
+    std::cout << "Bicycle is being stopped!\n";
+}
+
 struct Restaurant
 {
     int amountOfMenuItems = 90;
@@ -314,6 +329,21 @@ struct Band
     void adjustBandLooseness();
 };
 
+void Band::holdWatchToWrist()
+{
+    std::cout << "Band is holding watch to wrist.\n";
+}
+
+void Band::adjustBandTightness()
+{
+    std::cout << "The band has tightened.\n";
+}
+
+void Band::adjustBandLooseness()
+{
+    std::cout << "The band has loosened.\n";
+}
+
 struct Hands
 {
     float hourHand = 12.f;
@@ -349,6 +379,21 @@ struct Movement
     void makeClickSound();
     void adjustTiming();
 };
+
+void Movement::keepTime()
+{
+    std::cout << "Current time.\n";
+}
+
+void Movement::makeClickSound()
+{
+    std::cout << "Clicking sound is audible.\n";
+}
+
+void Movement::adjustTiming()
+{
+    std::cout << "Time is being adjusted.\n";
+}
 
 struct WristWatch
 {
