@@ -108,7 +108,52 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    void run(int howFast, bool startWithLeftFoot);
+
+    struct Foot
+    {
+        void stepForward();
+        int stepSize();
+    };
+
+    Foot leftFoot;
+    Foot rightFoot;
+};
+
+void Person::Foot::stepForward()
+{
+    std::cout << "stepped forward!\n";
+}
+
+int Person::Foot::stepSize()
+{
+    return 5;
+}
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward(); // returns void
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize(); // returns int
+    howFast = distanceTraveled - howFast;
+}
 
 
 
@@ -117,7 +162,7 @@ struct CarWash
     If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
     Solution: use the parameter in your implementation.
 
-    If you have 'shadows a field of <classname>' warnings, a local variable in the function has the same name as a class member.  
+    If you have 'shadows a field of <classname>' warnings, a local variable in the function has the same name as a class member.
     This local variable could also be a function parameter with the same name as the class member.
     Solution: change the local variable's name so it is different from the class member variable's name.
  
@@ -137,16 +182,10 @@ paste your code below
 
 struct Synthesizer
 {
-    //5 properties:
-    //    - Number of oscillators
     int numberOfOscillators = 3;
-    //    - Number of knobs
     int numberofKnobs = 15;
-    //    - Amount of voltage per octave
     float amountOfVoltagePerOctave = 0.5f;
-    //    - Number of keys
     int numberOfKeys = 88;
-    //    - Number of digital displays
     int numberOfDigitalDisplays = 1;
 
     struct Keyboard
@@ -157,236 +196,330 @@ struct Synthesizer
         std::string synthCompany = "Nord";
         std::string model = "Lead";
 
-        void pushKey(float midiVelocity, int polyphony = 10, bool afterTouch = true);
+        void pushKey(float midiVelocity, float polyphony = 10.f, bool afterTouch = true);
         void releaseKey(float releaseTime, bool usesADSR = true);
-        int getNumOfKeysPressed(int numOfMidiEvents); //3) returns the number of keys pressed
+        int getNumOfKeysPressed(int numOfMidiEvents);
     };
 
-    //3 things it can do:
-    //    - Make sound
     void makeSound(Keyboard keyboard);
-    //    - Show patch parameters
     void showPatchParameters();
-    //    - Adjust sound
-    float changeVoltage(float amountOfVoltage, Keyboard keyboard); //returns the current voltage value
+    float changeVoltage(float amountOfVoltage, Keyboard keyboard);
 
     Keyboard eventsOnSynth;
 };
 
+void Synthesizer::Keyboard::pushKey(float midiVelocityPushed, float morePolyphony, bool afterTouched)
+{
+    midiVelocityEnabled = midiVelocityPushed - morePolyphony - afterTouched;
+}
+
+void Synthesizer::Keyboard::releaseKey(float releasedTime, bool usedADSR)
+{
+    midiVelocityEnabled = releasedTime - usedADSR;
+}
+
+int Synthesizer::Keyboard::getNumOfKeysPressed(int numOfMidiEvents)
+{
+    return numOfMidiEvents;
+}
+
+void Synthesizer::makeSound(Keyboard keyboard)
+{
+    keyboard.pushKey(0.5f, 10.f, true);
+}
+
+void Synthesizer::showPatchParameters()
+{
+    numberOfKeys -= 3;
+}
+
+float Synthesizer::changeVoltage(float amountOfVoltage, Keyboard keyboard)
+{
+    return amountOfVoltagePerOctave = amountOfVoltage + keyboard.midiVelocityEnabled;
+}
+
 struct Bicycle
 {
-    //5 properties:
-    //    - Amount of gears
     int amountOfGears = 12;
-    //    - Amount of brake levers
     int amountOfBrakeLevers = 2;
-    //    - Number of shifters
     int numberOfShifters = 4;
-    //    - Number of wheels
     int numberOfWheels = 2;
-    //    - Number of pedals
     int numberOfPedals = 2;
-    //3 things it can do:
-    //    - Move a person
+
     void moveBicycle();
-    //    - Shift gears
     void shiftGears();
-    //    - Stop
     void stopBicycle();
 };
 
+void Bicycle::moveBicycle()
+{
+    std::cout << "Bicycle is moving!\n";
+}
+
+void Bicycle::shiftGears()
+{
+    std::cout << "Gears are being shifted!\n";
+}
+
+void Bicycle::stopBicycle()
+{
+    std::cout << "Bicycle is being stopped!\n";
+}
+
 struct Restaurant
 {
-    //5 properties:
-    //    - Amount of menu items
     int amountOfMenuItems = 90;
-    //    - Name of ingredients per menu item
     std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
-    //    - Number of ovens
     int numberOfOvens = 4;
-    //    - Number of employees
     int numberOfEmployees = 10;
-    //    - Number of tables
     int numberOfTables = 30;
 
     struct Kitchen
     {
-        //5 member variables with relevant data types.  the names are relevant to the UDT's purpose.
         int numOfCooks = 3;
         int numOfDeepFryers = 2;
         bool greaseCollected = true;
         float gallonsOfVegOil = 20.f;
         std::string orderName = "Lisa";
+        double totalAmountOfOil = 100.00;
 
-        void fillFryerWithOil(float amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
+        void fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
         void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
-        double annualRevenue(float annualProfit); //3) returns the annual revenue
+        double annualRevenue(double annualProfit);
     };
 
-    //3 things it can do:
-    //    - Make food
     void makeFood(Kitchen kitchen);
-    //    - Serve diners
     void serveDiners(Kitchen kitchen);
-    //    - Charge money
-    float chargeMoney(float moneyOfMeal); //returns the amount of the bill
+    float chargeMoney(float moneyOfMeal);
 
     Kitchen patronsBeingServed;
 };
 
+void Restaurant::Kitchen::fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon, bool oilNeedsReplaced)
+{
+    totalAmountOfOil = amountOfOil - costOfVegOilPerGallon - oilNeedsReplaced;
+}
+
+void Restaurant::Kitchen::printOrderTicket(int orderNumber, bool hasSpecialInstructions)
+{
+    numOfCooks = orderNumber + hasSpecialInstructions;
+}
+
+double Restaurant::Kitchen::annualRevenue(double annualProfit)
+{
+    return annualProfit;
+}
+
+void Restaurant::makeFood(Kitchen kitchen)
+{
+    amountOfMenuItems = kitchen.numOfCooks + kitchen.numOfDeepFryers;
+}
+
+void Restaurant::serveDiners(Kitchen kitchen)
+{
+    numberOfEmployees = kitchen.numOfCooks + kitchen.numOfDeepFryers;
+}
+
+float Restaurant::chargeMoney(float moneyOfMeal)
+{
+    return moneyOfMeal;
+}
+
 struct Bank
 {
-    //5 properties:
-    //    - Amount of money in vault
     double amountOfMoneyInVault = 987654.56;
-    //    - Amount of armed guards
     int amountOfArmedGuards = 4;
-    //    - Number of customers in line
     int numOfCustomersInLine = 7;
-    //    - Number of tellers
     int numOfTellers = 4;
-    //    - Amount of accounts
     float amountOfAccounts = 1355.5f;
-    //3 things it can do:
-    //    - Collect money
-    double collectMoney(double amountOfMoneyCollected); //returns amount of money collected
-    //    - Service client
+
+    double collectMoney(double amountOfMoneyCollected);
     void serviceClient();
-    //    - Wire money
-    float wireMoney(float amountOfMoneyWired); //returns amount of money wired
+    float wireMoney(float amountOfMoneyWired);
 };
+
+double Bank::collectMoney(double amountOfMoneyCollected)
+{
+    return amountOfMoneyCollected;
+}
+
+void Bank::serviceClient()
+{
+    std::cout << "Client is being served.\n";
+}
+
+float Bank::wireMoney(float amountOfMoneyWired)
+{
+    return amountOfMoneyWired;
+}
 
 struct Case
 {
-    //5 properties:
-    //    - Crystal
     int crystal = 1;
-    //    - Dial ring
     float dialRing = 10.25f;
-    //    - Bezel
     int bezel = 1;
-    //    - Date window
     float dateWindow = 1201.f;
-    //    - Hands
     int hands = 2;
-    //3 things it can do:
-    //    - House internal components
+
     void houseInternalComponents();
-    //    - Display time
-    float displayTime(float currentTime); //returns current time displayed
-    //    - Keep internal components clean
+    float displayTime(float currentTime);
     void keepInternalPartsClean();
 };
 
+void Case::houseInternalComponents()
+{
+    std::cout << "Internal components are housed.\n";
+}
+
+float Case::displayTime(float currentTime)
+{
+    return currentTime;
+}
+
+void Case::keepInternalPartsClean()
+{
+    std::cout << "Internal parts are nice and clean.\n";
+}
+
 struct Band
 {
-    //5 properties:
-    //    - Links
     int links = 5;
-    //    - Lug
     int lug = 2;
-    //    - Pins
     int pins = 9;
-    //    - Buckle
     int buckle = 1;
-    //    - Adustment
     int adjustment = 1;
-    //3 things it can do:
-    //    - Holds watch to wrist
+
     void holdWatchToWrist();
-    //    - Tight to wrist
     void adjustBandTightness();
-    //    - Loosen on wrist
     void adjustBandLooseness();
 };
 
+void Band::holdWatchToWrist()
+{
+    std::cout << "Band is holding watch to wrist.\n";
+}
+
+void Band::adjustBandTightness()
+{
+    std::cout << "The band has tightened.\n";
+}
+
+void Band::adjustBandLooseness()
+{
+    std::cout << "The band has loosened.\n";
+}
+
 struct Hands
 {
-    //5 properties:
-    //    - Hour hand
     float hourHand = 12.f;
-    //    - Second hand
     float secondHand = 60.f;
-    //    - Sweep second hand
     double sweepSecondHand = 120.00;
-    //    - Tide dial
     double tideDial = 24.00;
-    //    - Arbitrary subdial
     float arbitraryDial = 120.f;
-    //3 things it can do:
-    //    - Mark number of hours
-    float displayHours(float hours); //returns current hour
-    //    - Mark number of minutes
-    float displayMinutes(float minutes); //returns current minute
-    //    - Mark number of seconds
-    float displaySeconds(float seconds); //returns current second
+
+    float displayHours(float hours);
+    float displayMinutes(float minutes);
+    float displaySeconds(float seconds);
 };
+
+float Hands::displayHours(float hours)
+{
+    return hours;
+}
+
+float Hands::displayMinutes(float minutes)
+{
+    return minutes;
+}
+
+float Hands::displaySeconds(float seconds)
+{
+    return seconds;
+}
 
 struct AdjustmentDials
 {
-    //5 properties:
-    //    - Crown
     float crown = 120.f;
-    //    - Pusher 1
     float pusher1 = 120.f;
-    //    - Reset
     int reset = 1;
-    //    - Inner bezel crown
     double innerBezelCrown = 120.00;
-    //    - Pusher 2
     double pusher2 = 60.00;
-    //3 things it can do:
-    //    - Change displayed time forward
-    float changeTimeForward(float time); //returns new time
-    //    - Change displayed time backward
-    float changeTimeBackward(float time); //returns new time
-    //    - Activate secondary function
+
+    float changeTimeForward(float time);
+    float changeTimeBackward(float time);
     void useAuxiliaryFunction();
 };
 
+float AdjustmentDials::changeTimeForward(float time)
+{
+    return time + 1.f;
+}
+
+float AdjustmentDials::changeTimeBackward(float time)
+{
+    return time - 1.f;
+}
+
+void AdjustmentDials::useAuxiliaryFunction()
+{
+    std::cout << "Some kind of secondary function is being used.\n";
+}
+
 struct Movement
 {
-    //5 properties:
-    //    - Main wheel
     double mainWheel = 240.00;
-    //    - Fork
     int fork = 4;
-    //    - Ratchet wheel
     double ratchetWheel = 120.00;
-    //    - Safety roller
     double safetyRoller = 60.00;
-    //    - Barrell hub
     int barrellHub = 1;
-    //3 things it can do:
-    //    - Keep time
+
     void keepTime();
-    //    - Produce clicking noise
     void makeClickSound();
-    //    - Adjust timing
     void adjustTiming();
 };
 
+void Movement::keepTime()
+{
+    std::cout << "Current time.\n";
+}
+
+void Movement::makeClickSound()
+{
+    std::cout << "Clicking sound is audible.\n";
+}
+
+void Movement::adjustTiming()
+{
+    std::cout << "Time is being adjusted.\n";
+}
+
 struct WristWatch
 {
-    //5 properties:
-    //    - Outer Case
     Case outerCase;
-    //    - Band
     Band band;
-    //    - Hands
     Hands hands;
-    //    - Adjustment dials
     AdjustmentDials adjustmentDials;
-    //    - Movement
     Movement movement;
-    //3 things it can do:
-    //    - Display current time
-    float displayCurrentTime(float currentTime); //returns current time
-    //    - Measure amount of time past
-    double measureTimePast(double time); //returns amount of time past
-    //    - Change displayed time
+
+    float displayCurrentTime(float currentTime);
+    double measureTimePast(double time);
     void changeDisplayedTime();
 };
+
+float WristWatch::displayCurrentTime(float currentTime)
+{
+    return currentTime;
+}
+
+double WristWatch::measureTimePast(double time)
+{
+    return time;
+}
+
+void WristWatch::changeDisplayedTime()
+{
+    std::cout << "Time has been changed.\n";
+}
 
 
 
