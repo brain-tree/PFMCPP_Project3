@@ -84,6 +84,7 @@ struct Synthesizer
 
     struct Keyboard
     {
+        Keyboard();
         bool hasEightyEightKeys = true;
         float midiVelocityEnabled = 127.f;
         int numOfBlackKeys = 36;
@@ -105,6 +106,11 @@ struct Synthesizer
 Synthesizer::Synthesizer()
 {
     std::cout << "Synthesizer being constructed!" << std::endl;
+}
+
+Synthesizer::Keyboard::Keyboard()
+{
+    std::cout << "Keyboard is being constructed!" << std::endl;
 }
 
 void Synthesizer::Keyboard::pushKey(float midiVelocityPushed, float morePolyphony, bool afterTouched)
@@ -183,6 +189,7 @@ struct Restaurant
 
     struct Kitchen
     {
+        Kitchen();
         int numOfCooks = 3;
         int numOfDeepFryers = 2;
         bool greaseCollected = true;
@@ -207,6 +214,11 @@ Restaurant::Restaurant()
     std::cout << "Restaurant being constructed!" << std::endl;
 }
 
+Restaurant::Kitchen::Kitchen()
+{
+    std::cout << "Kitchen being constructed!" << std::endl;
+}
+
 void Restaurant::Kitchen::fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon, bool oilNeedsReplaced)
 {
     totalAmountOfOil = amountOfOil - costOfVegOilPerGallon - oilNeedsReplaced;
@@ -219,6 +231,7 @@ void Restaurant::Kitchen::printOrderTicket(int orderNumber, bool hasSpecialInstr
 
 double Restaurant::Kitchen::annualRevenue(double annualProfit)
 {
+    std::cout << "Displaying annual profit" << std::endl;
     return annualProfit;
 }
 
@@ -492,31 +505,61 @@ int main()
 
     Synthesizer instantiatedSynthesizer;
     instantiatedSynthesizer.makeSound(instantiatedSynthesizer.eventsOnSynth);
+    instantiatedSynthesizer.showPatchParameters();
+    instantiatedSynthesizer.changeVoltage(55.5, instantiatedSynthesizer.eventsOnSynth);
+
+    Synthesizer::Keyboard boardWithKeys;
+    boardWithKeys.pushKey(127.f, 10.f, true);
+    boardWithKeys.releaseKey(200.f, true);
+    boardWithKeys.getNumOfKeysPressed(127);
 
     Bicycle bike;
     bike.moveBicycle();
+    bike.shiftGears();
+    bike.stopBicycle();
 
     Restaurant placeToEat;
     placeToEat.makeFood(placeToEat.patronsBeingServed);
+    placeToEat.serveDiners(placeToEat.patronsBeingServed);
+    placeToEat.chargeMoney(20);
+
+    Restaurant::Kitchen cookArea;
+    cookArea.fillFryerWithOil(50.75, 2.0, false);
+    cookArea.printOrderTicket(5, false);
+    cookArea.annualRevenue(359000.52);
 
     Bank localBank;
     localBank.serviceClient();
+    localBank.collectMoney(258.22);
+    localBank.wireMoney(300.f);
 
     Case watchCase;
     watchCase.houseInternalComponents();
+    watchCase.displayTime(12.25);
+    watchCase.keepInternalPartsClean();
 
     Band wristBand;
     wristBand.holdWatchToWrist();
+    wristBand.adjustBandTightness();
+    wristBand.adjustBandLooseness();
 
     Hands watchHands;
     watchHands.displayHours(12.f);
+    watchHands.displayMinutes(60.f);
+    watchHands.displaySeconds(120.f);
 
     AdjustmentDials dials;
     dials.changeTimeForward(1.f);
+    dials.changeTimeBackward(12.f);
+    dials.useAuxiliaryFunction();
 
     Movement mechanisms;
     mechanisms.keepTime();
+    mechanisms.makeClickSound();
+    mechanisms.adjustTiming();
 
     WristWatch wholeWatch;
     wholeWatch.displayCurrentTime(10.5);
+    wholeWatch.measureTimePast(12.45);
+    wholeWatch.changeDisplayedTime();
 }
