@@ -522,10 +522,14 @@ int main()
     bike.shiftGears();
     bike.stopBicycle();
 
+    std::cout << "Is bike's member var 'amountOfGears' equal to 10? " << (bike.amountOfGears == 10 ? "Yes" : "No") << "\n";
+
     Restaurant placeToEat;
     placeToEat.makeFood(placeToEat.patronsBeingServed);
     placeToEat.serveDiners(placeToEat.patronsBeingServed);
     placeToEat.chargeMoney(20);
+
+    std::cout << "Is placeToEat's member var 'amountOfMenuItems' equal to 54? " << (placeToEat.amountOfMenuItems == 54 ? "Yes" : "No") << "\n";
 
     Restaurant::Kitchen cookArea;
     cookArea.fillFryerWithOil(50.75, 2.0, false);
