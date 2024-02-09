@@ -75,6 +75,7 @@ int main()
 
 struct Synthesizer
 {
+    Synthesizer();
     int numberOfOscillators = 3;
     int numberofKnobs = 15;
     float amountOfVoltagePerOctave = 0.5f;
@@ -101,6 +102,11 @@ struct Synthesizer
     Keyboard eventsOnSynth;
 };
 
+Synthesizer::Synthesizer()
+{
+    std::cout << "Synthesizer being constructed!" << std::endl;
+}
+
 void Synthesizer::Keyboard::pushKey(float midiVelocityPushed, float morePolyphony, bool afterTouched)
 {
     midiVelocityEnabled = midiVelocityPushed - morePolyphony - afterTouched;
@@ -119,6 +125,7 @@ int Synthesizer::Keyboard::getNumOfKeysPressed(int numOfMidiEvents)
 void Synthesizer::makeSound(Keyboard keyboard)
 {
     keyboard.pushKey(0.5f, 10.f, true);
+    std::cout << "Sound was made!" << std::endl;
 }
 
 void Synthesizer::showPatchParameters()
@@ -133,6 +140,7 @@ float Synthesizer::changeVoltage(float amountOfVoltage, Keyboard keyboard)
 
 struct Bicycle
 {
+    Bicycle();
     int amountOfGears = 12;
     int amountOfBrakeLevers = 2;
     int numberOfShifters = 4;
@@ -143,6 +151,11 @@ struct Bicycle
     void shiftGears();
     void stopBicycle();
 };
+
+Bicycle::Bicycle()
+{
+    std::cout << "Bicycle being constructed!" << std::endl;
+}
 
 void Bicycle::moveBicycle()
 {
@@ -161,6 +174,7 @@ void Bicycle::stopBicycle()
 
 struct Restaurant
 {
+    Restaurant();
     int amountOfMenuItems = 90;
     std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
     int numberOfOvens = 4;
@@ -187,6 +201,11 @@ struct Restaurant
 
     Kitchen patronsBeingServed;
 };
+
+Restaurant::Restaurant()
+{
+    std::cout << "Restaurant being constructed!" << std::endl;
+}
 
 void Restaurant::Kitchen::fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon, bool oilNeedsReplaced)
 {
@@ -220,6 +239,7 @@ float Restaurant::chargeMoney(float moneyOfMeal)
 
 struct Bank
 {
+    Bank();
     double amountOfMoneyInVault = 987654.56;
     int amountOfArmedGuards = 4;
     int numOfCustomersInLine = 7;
@@ -230,6 +250,11 @@ struct Bank
     void serviceClient();
     float wireMoney(float amountOfMoneyWired);
 };
+
+Bank::Bank()
+{
+    std::cout << "Bank is being constructed!" << std::endl;
+}
 
 double Bank::collectMoney(double amountOfMoneyCollected)
 {
@@ -248,6 +273,7 @@ float Bank::wireMoney(float amountOfMoneyWired)
 
 struct Case
 {
+    Case();
     int crystal = 1;
     float dialRing = 10.25f;
     int bezel = 1;
@@ -258,6 +284,11 @@ struct Case
     float displayTime(float currentTime);
     void keepInternalPartsClean();
 };
+
+Case::Case()
+{
+    std::cout << "Case is being constructed!" << std::endl;
+}
 
 void Case::houseInternalComponents()
 {
@@ -276,6 +307,7 @@ void Case::keepInternalPartsClean()
 
 struct Band
 {
+    Band();
     int links = 5;
     int lug = 2;
     int pins = 9;
@@ -286,6 +318,11 @@ struct Band
     void adjustBandTightness();
     void adjustBandLooseness();
 };
+
+Band::Band()
+{
+    std::cout << "Wristband is being constructed!" << std::endl;
+}
 
 void Band::holdWatchToWrist()
 {
@@ -304,6 +341,7 @@ void Band::adjustBandLooseness()
 
 struct Hands
 {
+    Hands();
     float hourHand = 12.f;
     float secondHand = 60.f;
     double sweepSecondHand = 120.00;
@@ -315,8 +353,14 @@ struct Hands
     float displaySeconds(float seconds);
 };
 
+Hands::Hands()
+{
+    std::cout << "Watch hands are being constructed!" << std::endl;
+}
+
 float Hands::displayHours(float hours)
 {
+    std::cout << "Displaying hours" << std::endl;
     return hours;
 }
 
@@ -332,6 +376,7 @@ float Hands::displaySeconds(float seconds)
 
 struct AdjustmentDials
 {
+    AdjustmentDials();
     float crown = 120.f;
     float pusher1 = 120.f;
     int reset = 1;
@@ -343,8 +388,14 @@ struct AdjustmentDials
     void useAuxiliaryFunction();
 };
 
+AdjustmentDials::AdjustmentDials()
+{
+    std::cout << "Adjustment dials are being constructed!" << std::endl;
+}
+
 float AdjustmentDials::changeTimeForward(float time)
 {
+    std::cout << "Dial adjusted forward" << std::endl;
     return time + 1.f;
 }
 
@@ -360,6 +411,7 @@ void AdjustmentDials::useAuxiliaryFunction()
 
 struct Movement
 {
+    Movement();
     double mainWheel = 240.00;
     int fork = 4;
     double ratchetWheel = 120.00;
@@ -370,6 +422,11 @@ struct Movement
     void makeClickSound();
     void adjustTiming();
 };
+
+Movement::Movement()
+{
+    std::cout << "Movement is being constructed!" << std::endl;
+}
 
 void Movement::keepTime()
 {
@@ -388,6 +445,7 @@ void Movement::adjustTiming()
 
 struct WristWatch
 {
+    WristWatch();
     Case outerCase;
     Band band;
     Hands hands;
@@ -399,8 +457,14 @@ struct WristWatch
     void changeDisplayedTime();
 };
 
+WristWatch::WristWatch()
+{
+    std::cout << "Wristwatch is being constructed!" << std::endl;
+}
+
 float WristWatch::displayCurrentTime(float currentTime)
 {
+    std::cout << "Current time is displayed" << std::endl;
     return currentTime;
 }
 
@@ -425,4 +489,34 @@ int main()
     Example::main();
     
     std::cout << "good to go!" << std::endl;
+
+    Synthesizer instantiatedSynthesizer;
+    instantiatedSynthesizer.makeSound(instantiatedSynthesizer.eventsOnSynth);
+
+    Bicycle bike;
+    bike.moveBicycle();
+
+    Restaurant placeToEat;
+    placeToEat.makeFood(placeToEat.patronsBeingServed);
+
+    Bank localBank;
+    localBank.serviceClient();
+
+    Case watchCase;
+    watchCase.houseInternalComponents();
+
+    Band wristBand;
+    wristBand.holdWatchToWrist();
+
+    Hands watchHands;
+    watchHands.displayHours(12.f);
+
+    AdjustmentDials dials;
+    dials.changeTimeForward(1.f);
+
+    Movement mechanisms;
+    mechanisms.keepTime();
+
+    WristWatch wholeWatch;
+    wholeWatch.displayCurrentTime(10.5);
 }
