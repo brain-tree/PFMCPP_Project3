@@ -508,10 +508,14 @@ int main()
     instantiatedSynthesizer.showPatchParameters();
     instantiatedSynthesizer.changeVoltage(55.5, instantiatedSynthesizer.eventsOnSynth);
 
+    std::cout << "Is instantiatedSynthesizer's member var 'numberOfOscillators' equal to 0? " << (instantiatedSynthesizer.numberOfOscillators == 0 ? "Yes" : "No") << "\n";
+
     Synthesizer::Keyboard boardWithKeys;
     boardWithKeys.pushKey(127.f, 10.f, true);
     boardWithKeys.releaseKey(200.f, true);
     boardWithKeys.getNumOfKeysPressed(127);
+
+    std::cout << "Is boardWithKeys' member var 'numOfBlackKeys' equal to 36? " << (boardWithKeys.numOfBlackKeys == 36 ? "Yes" : "No") << "\n";
 
     Bicycle bike;
     bike.moveBicycle();
@@ -528,35 +532,51 @@ int main()
     cookArea.printOrderTicket(5, false);
     cookArea.annualRevenue(359000.52);
 
+    std::cout << "Is cookArea's member var 'greaseCollected' set to true? " << (cookArea.greaseCollected == true ? "Yes" : "No") << "\n";
+
+    std::cout << "Is cookArea's member var 'numOfCooks' equal to 3? " << (cookArea.numOfCooks == 3 ? "Yes" : "No") << "\n";
+
     Bank localBank;
     localBank.serviceClient();
     localBank.collectMoney(258.22);
     localBank.wireMoney(300.f);
+
+    std::cout << "Is localBank's member var 'amountOfMoneyInVault' equal to 0? " << (localBank.amountOfMoneyInVault == 0.0 ? "Yes" : "No") << "\n";
 
     Case watchCase;
     watchCase.houseInternalComponents();
     watchCase.displayTime(12.25);
     watchCase.keepInternalPartsClean();
 
+    std::cout << "Is watchCase's member var 'bezel' equal to 1? " << (watchCase.bezel == 1 ? "Yes" : "No") << "\n";
+
     Band wristBand;
     wristBand.holdWatchToWrist();
     wristBand.adjustBandTightness();
     wristBand.adjustBandLooseness();
+
+    std::cout << "Is wristBand's member var 'links' equal to 9? " << (wristBand.links == 9 ? "Yes" : "No") << "\n";
 
     Hands watchHands;
     watchHands.displayHours(12.f);
     watchHands.displayMinutes(60.f);
     watchHands.displaySeconds(120.f);
 
+    std::cout << "Is watchHands's member var 'tideDial' equal to 3? " << (watchHands.tideDial == 3.0 ? "Yes" : "No") << "\n";
+
     AdjustmentDials dials;
     dials.changeTimeForward(1.f);
     dials.changeTimeBackward(12.f);
     dials.useAuxiliaryFunction();
 
+    std::cout << "Is dials's member var 'crown' equal to 120? " << (dials.crown == 120.f ? "Yes" : "No") << "\n";
+
     Movement mechanisms;
     mechanisms.keepTime();
     mechanisms.makeClickSound();
     mechanisms.adjustTiming();
+
+    std::cout << "Is mechanisms's member var 'mainWheel' equal to 240? " << (mechanisms.mainWheel == 240.00 ? "Yes" : "No") << "\n";
 
     WristWatch wholeWatch;
     wholeWatch.displayCurrentTime(10.5);
