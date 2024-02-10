@@ -172,12 +172,12 @@ struct Restaurant
     struct Kitchen
     {
         Kitchen();
-        int numOfCooks = 3;
-        int numOfDeepFryers = 2;
-        bool greaseCollected = true;
-        float gallonsOfVegOil = 20.f;
-        std::string orderName = "Lisa";
-        double totalAmountOfOil = 100.00;
+        int numOfCooks;
+        int numOfDeepFryers;
+        bool greaseCollected;
+        float gallonsOfVegOil;
+        std::string orderName ;
+        double totalAmountOfOil;
 
         void fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
         void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
@@ -201,7 +201,7 @@ Restaurant::Restaurant()
     std::cout << "Restaurant being constructed!" << std::endl;
 }
 
-Restaurant::Kitchen::Kitchen()
+Restaurant::Kitchen::Kitchen() : numOfCooks(3), numOfDeepFryers(2), greaseCollected(true), gallonsOfVegOil(20.f), orderName("Lisa"), totalAmountOfOil(100.00)
 {
     std::cout << "Kitchen being constructed!" << std::endl;
 }
@@ -433,13 +433,8 @@ struct Movement
     void adjustTiming();
 };
 
-Movement::Movement()
+Movement::Movement() : mainWheel(240.00), fork(4), ratchetWheel(120.0), safetyRoller(60.00), barrellHub(1)
 {
-    mainWheel = 240.00;
-    fork = 4;
-    ratchetWheel = 120.00;
-    safetyRoller = 60.00;
-    barrellHub = 1;
     std::cout << "Movement is being constructed!" << std::endl;
 }
 
