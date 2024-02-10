@@ -57,11 +57,11 @@ struct Synthesizer
     struct Keyboard
     {
         Keyboard();
-        bool hasEightyEightKeys = true;
-        float midiVelocityEnabled = 127.f;
-        int numOfBlackKeys = 36;
-        std::string synthCompany = "Nord";
-        std::string model = "Lead";
+        bool hasEightyEightKeys;
+        float midiVelocityEnabled;
+        int numOfBlackKeys;
+        std::string synthCompany;
+        std::string model;
 
         void pushKey(float midiVelocity, float polyphony = 10.f, bool afterTouch = true);
         void releaseKey(float releaseTime, bool usesADSR = true);
@@ -82,6 +82,11 @@ Synthesizer::Synthesizer()
 
 Synthesizer::Keyboard::Keyboard()
 {
+    hasEightyEightKeys = true;
+    midiVelocityEnabled = 127.f;
+    numOfBlackKeys = 36;
+    synthCompany = "Nord";
+    model = "Lead";
     std::cout << "Keyboard is being constructed!" << std::endl;
 }
 
@@ -119,11 +124,11 @@ float Synthesizer::changeVoltage(float amountOfVoltage, Keyboard keyboard)
 struct Bicycle
 {
     Bicycle();
-    int amountOfGears = 12;
-    int amountOfBrakeLevers = 2;
-    int numberOfShifters = 4;
-    int numberOfWheels = 2;
-    int numberOfPedals = 2;
+    int amountOfGears;
+    int amountOfBrakeLevers;
+    int numberOfShifters;
+    int numberOfWheels;
+    int numberOfPedals;
 
     void moveBicycle();
     void shiftGears();
@@ -132,6 +137,11 @@ struct Bicycle
 
 Bicycle::Bicycle()
 {
+    amountOfGears = 12;
+    amountOfBrakeLevers = 2;
+    numberOfShifters = 4;
+    numberOfWheels = 2;
+    numberOfPedals = 2;
     std::cout << "Bicycle being constructed!" << std::endl;
 }
 
@@ -153,21 +163,21 @@ void Bicycle::stopBicycle()
 struct Restaurant
 {
     Restaurant();
-    int amountOfMenuItems = 90;
-    std::string nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
-    int numberOfOvens = 4;
-    int numberOfEmployees = 10;
-    int numberOfTables = 30;
+    int amountOfMenuItems;
+    std::string nameOfIngredientsPerMenuItem;
+    int numberOfOvens;
+    int numberOfEmployees;
+    int numberOfTables;
 
     struct Kitchen
     {
         Kitchen();
-        int numOfCooks = 3;
-        int numOfDeepFryers = 2;
-        bool greaseCollected = true;
-        float gallonsOfVegOil = 20.f;
-        std::string orderName = "Lisa";
-        double totalAmountOfOil = 100.00;
+        int numOfCooks;
+        int numOfDeepFryers;
+        bool greaseCollected;
+        float gallonsOfVegOil;
+        std::string orderName ;
+        double totalAmountOfOil;
 
         void fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
         void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
@@ -183,10 +193,15 @@ struct Restaurant
 
 Restaurant::Restaurant()
 {
+    amountOfMenuItems = 90;
+    nameOfIngredientsPerMenuItem = "Tomatoes, lettuce, cheese, meat, and mayo";
+    numberOfOvens = 4;
+    numberOfEmployees = 10;
+    numberOfTables = 30;
     std::cout << "Restaurant being constructed!" << std::endl;
 }
 
-Restaurant::Kitchen::Kitchen()
+Restaurant::Kitchen::Kitchen() : numOfCooks(3), numOfDeepFryers(2), greaseCollected(true), gallonsOfVegOil(20.f), orderName("Lisa"), totalAmountOfOil(100.00)
 {
     std::cout << "Kitchen being constructed!" << std::endl;
 }
@@ -293,11 +308,11 @@ void Case::keepInternalPartsClean()
 struct Band
 {
     Band();
-    int links = 5;
-    int lug = 2;
-    int pins = 9;
-    int buckle = 1;
-    int adjustment = 1;
+    int links;
+    int lug;
+    int pins;
+    int buckle;
+    int adjustment;
 
     void holdWatchToWrist();
     void adjustBandTightness();
@@ -306,6 +321,11 @@ struct Band
 
 Band::Band()
 {
+    links = 5;
+    lug = 2;
+    pins = 9;
+    buckle = 1;
+    adjustment = 1;
     std::cout << "Wristband is being constructed!" << std::endl;
 }
 
@@ -362,11 +382,11 @@ float Hands::displaySeconds(float seconds)
 struct AdjustmentDials
 {
     AdjustmentDials();
-    float crown = 120.f;
-    float pusher1 = 120.f;
-    int reset = 1;
-    double innerBezelCrown = 120.00;
-    double pusher2 = 60.00;
+    float crown;
+    float pusher1;
+    int reset;
+    double innerBezelCrown;
+    double pusher2;
 
     float changeTimeForward(float time);
     float changeTimeBackward(float time);
@@ -375,6 +395,11 @@ struct AdjustmentDials
 
 AdjustmentDials::AdjustmentDials()
 {
+    crown = 120.f;
+    pusher1 = 120.f;
+    reset = 1;
+    innerBezelCrown = 120.00;
+    pusher2 = 60.00;
     std::cout << "Adjustment dials are being constructed!" << std::endl;
 }
 
@@ -397,18 +422,18 @@ void AdjustmentDials::useAuxiliaryFunction()
 struct Movement
 {
     Movement();
-    double mainWheel = 240.00;
-    int fork = 4;
-    double ratchetWheel = 120.00;
-    double safetyRoller = 60.00;
-    int barrellHub = 1;
+    double mainWheel;
+    int fork;
+    double ratchetWheel;
+    double safetyRoller;
+    int barrellHub;
 
     void keepTime();
     void makeClickSound();
     void adjustTiming();
 };
 
-Movement::Movement()
+Movement::Movement() : mainWheel(240.00), fork(4), ratchetWheel(120.0), safetyRoller(60.00), barrellHub(1)
 {
     std::cout << "Movement is being constructed!" << std::endl;
 }
