@@ -35,10 +35,10 @@ Create a branch named Part5
 #include <iostream>
 namespace Example 
 {
-struct Bar 
-{ 
-    int num = 0; 
-    Bar(int n) : num(n) { } 
+struct Bar
+{
+    int num = 0;
+    Bar(int n) : num(n) { }
 };
 struct Foo
 {
@@ -100,7 +100,14 @@ struct Synthesizer
     void makeSound(Keyboard keyboard);
     void showPatchParameters();
     float changeVoltage(float amountOfVoltage, Keyboard keyboard);
-
+/*    void changeTimbre(int filterSweep, int rezSweep)
+    {
+        
+        {
+            
+        }
+    }
+*/
     Keyboard eventsOnSynth;
 };
 
@@ -162,6 +169,7 @@ struct Bicycle
     void moveBicycle();
     void shiftGears();
     void stopBicycle();
+    void arbitraryFunc(int valueA, int valueB, int doABikeThing);
 };
 
 Bicycle::Bicycle()
@@ -187,6 +195,20 @@ void Bicycle::shiftGears()
 void Bicycle::stopBicycle()
 {
     std::cout << "Bicycle is being stopped!\n";
+}
+
+void Bicycle::arbitraryFunc(int valueA, int valueB, int doABikeThing)
+{
+    int valueC = 10;
+    int valueD = 5;
+    int arbitraryMember = valueC + valueD;
+    int totalMembers = arbitraryMember * valueC + valueD + valueA + valueB;
+
+    while(doABikeThing < totalMembers)
+    {
+        --doABikeThing;
+        std::cout << "Say something about bikes" << std::endl;
+    }
 }
 
 struct Restaurant
@@ -547,6 +569,7 @@ int main()
     bike.moveBicycle();
     bike.shiftGears();
     bike.stopBicycle();
+    bike.arbitraryFunc(0, 0, 0);
 
     std::cout << "Is bike's member var 'amountOfGears' equal to 10? " << (bike.amountOfGears == 10 ? "Yes" : "No") << "\n";
 
