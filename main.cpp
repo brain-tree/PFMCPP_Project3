@@ -95,19 +95,14 @@ struct Synthesizer
         void pushKey(float midiVelocity, float polyphony = 10.f, bool afterTouch = true);
         void releaseKey(float releaseTime, bool usesADSR = true);
         int getNumOfKeysPressed(int numOfMidiEvents);
+        void changeVelocity(int midiValue);
     };
 
     void makeSound(Keyboard keyboard);
     void showPatchParameters();
     float changeVoltage(float amountOfVoltage, Keyboard keyboard);
-/*    void changeTimbre(int filterSweep, int rezSweep)
-    {
-        
-        {
-            
-        }
-    }
-*/
+    void changeTimbre(int filterSweep, int rezSweep);
+
     Keyboard eventsOnSynth;
 };
 
@@ -141,6 +136,23 @@ int Synthesizer::Keyboard::getNumOfKeysPressed(int numOfMidiEvents)
     return numOfMidiEvents;
 }
 
+void Synthesizer::Keyboard::changeVelocity(int midiValue)
+{
+    int velocityValue = 0;
+    bool midiTriggered = true;
+    int velocityChanged = midiTriggered + velocityValue + midiValue;
+
+    while(midiTriggered)
+    {
+        ++velocityValue;
+        ++velocityChanged;
+        std::cout << "New velocity" << std::endl;
+
+        if(velocityChanged >= 1)
+        break;
+    }
+}
+
 void Synthesizer::makeSound(Keyboard keyboard)
 {
     keyboard.pushKey(0.5f, 10.f, true);
@@ -155,6 +167,18 @@ void Synthesizer::showPatchParameters()
 float Synthesizer::changeVoltage(float amountOfVoltage, Keyboard keyboard)
 {
     return amountOfVoltagePerOctave = amountOfVoltage + keyboard.midiVelocityEnabled;
+}
+
+void Synthesizer::changeTimbre(int filterSweep, int rezSweep)
+{
+    int acidTweak = filterSweep + rezSweep;
+    int acid = 0;
+
+    while(acidTweak > acid)
+    {
+        ++acid;
+        std::cout << "Come on you runts, let's have some Aphex acid!" << std::endl;
+    }
 }
 
 struct Bicycle
@@ -209,7 +233,7 @@ void Bicycle::arbitraryFunc(int valueA, int valueB, int doABikeThing)
         ++doABikeThing;
         std::cout << "Say something about bikes" << std::endl;
 
-        if(doABikeThing > 10)
+        if(doABikeThing >= 5)
         break;
     }
 }
@@ -241,6 +265,7 @@ struct Restaurant
     void makeFood(Kitchen kitchen);
     void serveDiners(Kitchen kitchen);
     float chargeMoney(float moneyOfMeal);
+    void cleanTheKitchen(int amountOfAmmonia, int numOfSponges);
 
     Kitchen patronsBeingServed;
 };
@@ -289,6 +314,25 @@ void Restaurant::serveDiners(Kitchen kitchen)
 float Restaurant::chargeMoney(float moneyOfMeal)
 {
     return moneyOfMeal;
+}
+
+void Restaurant::cleanTheKitchen(int amountOfAmmonia, int numOfSponges)
+{
+    bool kitchenIsClean = true;
+    int sponges = 0;
+    int ammonia = 0;
+    int cleanTheKitchen = amountOfAmmonia + numOfSponges;
+
+    while(sponges && ammonia <= 1)
+    {
+        ++sponges;
+        ++ammonia;
+        ++cleanTheKitchen;
+        std::cout << "The kitchen is being cleaned!" << std::endl;
+
+        if(kitchenIsClean)
+        break;
+    }
 }
 
 struct Bank
@@ -558,6 +602,7 @@ int main()
     instantiatedSynthesizer.makeSound(instantiatedSynthesizer.eventsOnSynth);
     instantiatedSynthesizer.showPatchParameters();
     instantiatedSynthesizer.changeVoltage(55.5, instantiatedSynthesizer.eventsOnSynth);
+    instantiatedSynthesizer.changeTimbre(0, 1);
 
     std::cout << "Is instantiatedSynthesizer's member var 'numberOfOscillators' equal to 0? " << (instantiatedSynthesizer.numberOfOscillators == 0 ? "Yes" : "No") << "\n";
 
@@ -565,6 +610,7 @@ int main()
     boardWithKeys.pushKey(127.f, 10.f, true);
     boardWithKeys.releaseKey(200.f, true);
     boardWithKeys.getNumOfKeysPressed(127);
+    boardWithKeys.changeVelocity(127);
 
     std::cout << "Is boardWithKeys' member var 'numOfBlackKeys' equal to 36? " << (boardWithKeys.numOfBlackKeys == 36 ? "Yes" : "No") << "\n";
 
@@ -580,6 +626,7 @@ int main()
     placeToEat.makeFood(placeToEat.patronsBeingServed);
     placeToEat.serveDiners(placeToEat.patronsBeingServed);
     placeToEat.chargeMoney(20);
+    placeToEat.cleanTheKitchen(0, 0);
 
     std::cout << "Is placeToEat's member var 'amountOfMenuItems' equal to 54? " << (placeToEat.amountOfMenuItems == 54 ? "Yes" : "No") << "\n";
 
