@@ -206,8 +206,11 @@ void Bicycle::arbitraryFunc(int valueA, int valueB, int doABikeThing)
 
     while(doABikeThing < totalMembers)
     {
-        --doABikeThing;
+        ++doABikeThing;
         std::cout << "Say something about bikes" << std::endl;
+
+        if(doABikeThing > 10)
+        break;
     }
 }
 
