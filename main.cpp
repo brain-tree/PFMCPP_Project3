@@ -398,10 +398,10 @@ float Bank::convertToCanadianDollar(float dollarValue)
     while(dollarValue <= 1)
     {
         ++conversionValue;
-        std::cout << "Calculated value " << conversionValue << std::endl;
+        std::cout << "Calculated conversion value: " << conversionValue << std::endl;
 
-       if(totalConverted)
-       break;
+        if(totalConverted)
+        break;
     }
     return conversionValue;
 }
