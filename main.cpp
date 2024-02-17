@@ -260,6 +260,7 @@ struct Restaurant
         void fillFryerWithOil(double amountOfOil, double costOfVegOilPerGallon = 2.0, bool oilNeedsReplaced = false);
         void printOrderTicket(int orderNumber, bool hasSpecialInstructions = false);
         double annualRevenue(double annualProfit);
+        void replaceTheOven(int newOven, int oldOven);
     };
 
     void makeFood(Kitchen kitchen);
@@ -299,6 +300,20 @@ double Restaurant::Kitchen::annualRevenue(double annualProfit)
 {
     std::cout << "Displaying annual profit" << std::endl;
     return annualProfit;
+}
+
+void Restaurant::Kitchen::replaceTheOven(int newPizzaOven, int oldPizzaOven)
+{
+    int numOfNewOvens = 2;
+    int numOfOldOvens = 1;
+    int sizeOfNewOven = oldPizzaOven * 2;
+    int amountOfPizzasPerHour = sizeOfNewOven * newPizzaOven + oldPizzaOven - numOfOldOvens;
+
+    while(numOfNewOvens > 2)
+    {
+        ++amountOfPizzasPerHour;
+        std::cout << "More pizzas capable" << std::endl;
+    }
 }
 
 void Restaurant::makeFood(Kitchen kitchen)
@@ -634,6 +649,7 @@ int main()
     cookArea.fillFryerWithOil(50.75, 2.0, false);
     cookArea.printOrderTicket(5, false);
     cookArea.annualRevenue(359000.52);
+    cookArea.replaceTheOven(2, 1);
 
     std::cout << "Is cookArea's member var 'greaseCollected' set to true? " << (cookArea.greaseCollected == true ? "Yes" : "No") << "\n";
 
