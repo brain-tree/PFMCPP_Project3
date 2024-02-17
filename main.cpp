@@ -418,6 +418,7 @@ struct Case
     void houseInternalComponents();
     float displayTime(float currentTime);
     void keepInternalPartsClean();
+    int removeCase(int inchesRound);
 };
 
 Case::Case()
@@ -438,6 +439,23 @@ float Case::displayTime(float currentTime)
 void Case::keepInternalPartsClean()
 {
     std::cout << "Internal parts are nice and clean.\n";
+}
+
+int Case::removeCase(int inchesRound)
+{
+    int caseDiameter = 2;
+    int numOfRotations = inchesRound * caseDiameter;
+    bool caseOff = true;
+
+    while(caseDiameter == 2)
+    {
+        ++numOfRotations;
+        std::cout << "Removing the case. Rotations performed: " << numOfRotations << std::endl;
+
+        if(caseOff)
+        break;
+    }
+    return numOfRotations;
 }
 
 struct Band
@@ -689,6 +707,7 @@ int main()
     watchCase.houseInternalComponents();
     watchCase.displayTime(12.25);
     watchCase.keepInternalPartsClean();
+    watchCase.removeCase(2);
 
     std::cout << "Is watchCase's member var 'bezel' equal to 1? " << (watchCase.bezel == 1 ? "Yes" : "No") << "\n";
 
