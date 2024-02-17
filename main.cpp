@@ -362,6 +362,7 @@ struct Bank
     double collectMoney(double amountOfMoneyCollected);
     void serviceClient();
     float wireMoney(float amountOfMoneyWired);
+    float convertToCanadianDollar(float dollarValue);
 };
 
 Bank::Bank()
@@ -382,6 +383,27 @@ void Bank::serviceClient()
 float Bank::wireMoney(float amountOfMoneyWired)
 {
     return amountOfMoneyWired;
+}
+
+float Bank::convertToCanadianDollar(float dollarValue)
+{
+    float usdValue = 1.f;
+    float exchangeRate = 0.74f;
+    float convertedValue = usdValue / exchangeRate;
+    float totalCash = 1452584.63f;
+    float markupRate = convertedValue * 100.f;
+    float conversionValue = totalCash * convertedValue + markupRate;
+    bool totalConverted = true;
+
+    while(dollarValue <= 1)
+    {
+        ++conversionValue;
+        std::cout << "Calculated value " << conversionValue << std::endl;
+
+       if(totalConverted)
+       break;
+    }
+    return conversionValue;
 }
 
 struct Case
@@ -659,6 +681,7 @@ int main()
     localBank.serviceClient();
     localBank.collectMoney(258.22);
     localBank.wireMoney(300.f);
+    localBank.convertToCanadianDollar(1.f);
 
     std::cout << "Is localBank's member var 'amountOfMoneyInVault' equal to 0? " << (localBank.amountOfMoneyInVault == 0.0 ? "Yes" : "No") << "\n";
 
