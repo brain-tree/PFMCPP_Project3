@@ -470,6 +470,7 @@ struct Band
     void holdWatchToWrist();
     void adjustBandTightness();
     void adjustBandLooseness();
+    void removeBand(double wristCircumference);
 };
 
 Band::Band()
@@ -495,6 +496,22 @@ void Band::adjustBandTightness()
 void Band::adjustBandLooseness()
 {
     std::cout << "The band has loosened.\n";
+}
+
+void Band::removeBand(double wristCircumference)
+{
+    double numOfInches = 5.0;
+    double tightnessOfBand = 1.0;
+    double bandRemoved = wristCircumference - tightnessOfBand - numOfInches;
+
+    while(tightnessOfBand == 1.0)
+    {
+        --tightnessOfBand;
+        std::cout << "The band is being removed." << std::endl;
+
+        if(bandRemoved < 1)
+        break;
+    }
 }
 
 struct Hands
@@ -715,6 +732,7 @@ int main()
     wristBand.holdWatchToWrist();
     wristBand.adjustBandTightness();
     wristBand.adjustBandLooseness();
+    wristBand.removeBand(1);
 
     std::cout << "Is wristBand's member var 'links' equal to 9? " << (wristBand.links == 9 ? "Yes" : "No") << "\n";
 
