@@ -579,6 +579,7 @@ struct AdjustmentDials
     float changeTimeForward(float time);
     float changeTimeBackward(float time);
     void useAuxiliaryFunction();
+    int adjustTheDial(int increaseValue, int decreaseValue);
 };
 
 AdjustmentDials::AdjustmentDials()
@@ -605,6 +606,37 @@ float AdjustmentDials::changeTimeBackward(float time)
 void AdjustmentDials::useAuxiliaryFunction()
 {
     std::cout << "Some kind of secondary function is being used.\n";
+}
+
+int AdjustmentDials::adjustTheDial(int increaseValue, int decreaseValue)
+{
+    int adjustmentValue = 100;
+    int neutralValue = increaseValue + decreaseValue;
+
+    while(adjustmentValue <= 100)
+    {
+        ++adjustmentValue;
+        std::cout << "Value at 100" << std::endl;
+    }
+    if(adjustmentValue > 100)
+    {
+        ++adjustmentValue;
+        std::cout << "Value is over 100" << std::endl;
+    }
+    if(adjustmentValue += 200)
+    {
+        std::cout << "Current value: " << adjustmentValue << std::endl;
+    }
+    if(adjustmentValue >= 100)
+    {
+        --adjustmentValue;
+        std::cout << "Decreasing value: " << adjustmentValue << std::endl;
+    }
+    else
+    {
+        std::cout << "Quitting." << neutralValue << std::endl;
+    }
+    return adjustmentValue;
 }
 
 struct Movement
@@ -766,6 +798,7 @@ int main()
     dials.changeTimeForward(1.f);
     dials.changeTimeBackward(12.f);
     dials.useAuxiliaryFunction();
+    dials.adjustTheDial(0, 1);
 
     std::cout << "Is dials's member var 'crown' equal to 120? " << (dials.crown == 120.f ? "Yes" : "No") << "\n";
 
