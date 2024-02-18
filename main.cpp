@@ -526,6 +526,7 @@ struct Hands
     float displayHours(float hours);
     float displayMinutes(float minutes);
     float displaySeconds(float seconds);
+    int increaseTime(int timeInSeconds);
 };
 
 Hands::Hands()
@@ -547,6 +548,23 @@ float Hands::displayMinutes(float minutes)
 float Hands::displaySeconds(float seconds)
 {
     return seconds;
+}
+
+int Hands::increaseTime(int timeInSeconds)
+{
+    int secondsTicking = 0;
+    int totalTime = secondsTicking + timeInSeconds;
+
+    while(secondsTicking < 10)
+    {
+        ++secondsTicking;
+        std::cout << "Increasing seconds: " << secondsTicking << std::endl;
+
+        if(secondsTicking > 10)
+        ++secondsTicking;
+        std::cout << "Alternate add: " << secondsTicking << std::endl;
+    }
+    return totalTime;
 }
 
 struct AdjustmentDials
@@ -740,6 +758,7 @@ int main()
     watchHands.displayHours(12.f);
     watchHands.displayMinutes(60.f);
     watchHands.displaySeconds(120.f);
+    watchHands.increaseTime(0);
 
     std::cout << "Is watchHands's member var 'tideDial' equal to 3? " << (watchHands.tideDial == 3.0 ? "Yes" : "No") << "\n";
 
