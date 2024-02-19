@@ -651,6 +651,7 @@ struct Movement
     void keepTime();
     void makeClickSound();
     void adjustTiming();
+    void movementFunc(double gearFunction);
 };
 
 Movement::Movement() : mainWheel(240.00), fork(4), ratchetWheel(120.0), safetyRoller(60.00), barrellHub(1)
@@ -671,6 +672,21 @@ void Movement::makeClickSound()
 void Movement::adjustTiming()
 {
     std::cout << "Time is being adjusted.\n";
+}
+
+void Movement::movementFunc(double gearFunction)
+{
+    double gearValue = 1.0;
+    double gearPosition = gearValue + gearFunction;
+
+    while(gearValue >= 1.0)
+    {
+        ++gearValue;
+        std::cout << "Gear is functioning. Gear position: " << gearPosition << std::endl;
+        
+    if(gearValue > 9)
+    break;
+    }
 }
 
 struct WristWatch
@@ -806,6 +822,7 @@ int main()
     mechanisms.keepTime();
     mechanisms.makeClickSound();
     mechanisms.adjustTiming();
+    mechanisms.movementFunc(1);
 
     std::cout << "Is mechanisms's member var 'mainWheel' equal to 240? " << (mechanisms.mainWheel == 240.00 ? "Yes" : "No") << "\n";
 
