@@ -682,6 +682,7 @@ void Movement::movementFunc(double gearFunction)
     while(gearValue >= 1.0)
     {
         ++gearValue;
+        ++gearPosition;
         std::cout << "Gear is functioning. Gear position: " << gearPosition << std::endl;
         
     if(gearValue > 9)
@@ -701,6 +702,7 @@ struct WristWatch
     float displayCurrentTime(float currentTime);
     double measureTimePast(double time);
     void changeDisplayedTime();
+    int changRate(int increaseRate, int decreaseRate);
 };
 
 WristWatch::WristWatch()
@@ -722,6 +724,25 @@ double WristWatch::measureTimePast(double time)
 void WristWatch::changeDisplayedTime()
 {
     std::cout << "Time has been changed.\n";
+}
+
+int WristWatch::changRate(int increaseRate, int decreaseRate)
+{
+    int neutralRate = increaseRate - decreaseRate;
+    int normalRate = 0;
+    int fasterRate = 100;
+    bool watchIsWorking = true;
+
+    while(watchIsWorking)
+    {
+        ++normalRate;
+        --fasterRate;
+        std::cout << "Faster rate is " << fasterRate << ". Normal rate is " << normalRate << "." << std::endl;
+
+        if(normalRate && fasterRate == 50)
+        break;
+    }
+    return neutralRate;
 }
 
 
@@ -830,4 +851,5 @@ int main()
     wholeWatch.displayCurrentTime(10.5);
     wholeWatch.measureTimePast(12.45);
     wholeWatch.changeDisplayedTime();
+    wholeWatch.changRate(0, 100);
 }
