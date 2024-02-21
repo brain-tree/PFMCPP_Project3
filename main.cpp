@@ -147,7 +147,6 @@ void Synthesizer::Keyboard::changeVelocity(int midiValue)
         ++velocityValue;
         ++velocityChanged;
         std::cout << "New velocity" << std::endl;
-
         if(velocityChanged >= 1)
         break;
     }
@@ -232,7 +231,6 @@ void Bicycle::arbitraryFunc(int valueA, int valueB, int doABikeThing)
     {
         ++doABikeThing;
         std::cout << "Say something about bikes" << std::endl;
-
         if(doABikeThing >= 5)
         break;
     }
@@ -344,7 +342,6 @@ void Restaurant::cleanTheKitchen(int amountOfAmmonia, int numOfSponges)
         ++ammonia;
         ++cleanTheKitchen;
         std::cout << "The kitchen is being cleaned!" << std::endl;
-
         if(kitchenIsClean)
         break;
     }
@@ -399,7 +396,6 @@ float Bank::convertToCanadianDollar(float dollarValue)
     {
         ++conversionValue;
         std::cout << "Calculated conversion value: " << conversionValue << std::endl;
-
         if(totalConverted)
         break;
     }
@@ -451,7 +447,6 @@ int Case::removeCase(int inchesRound)
     {
         ++numOfRotations;
         std::cout << "Removing the case. Rotations performed: " << numOfRotations << std::endl;
-
         if(caseOff)
         break;
     }
@@ -508,7 +503,6 @@ void Band::removeBand(double wristCircumference)
     {
         --tightnessOfBand;
         std::cout << "The band is being removed." << std::endl;
-
         if(bandRemoved < 1)
         break;
     }
@@ -559,7 +553,6 @@ int Hands::increaseTime(int timeInSeconds)
     {
         ++secondsTicking;
         std::cout << "Increasing seconds: " << secondsTicking << std::endl;
-
         if(secondsTicking > 10)
         ++secondsTicking;
         std::cout << "Alternate add: " << secondsTicking << std::endl;
@@ -684,9 +677,8 @@ void Movement::movementFunc(double gearFunction)
         ++gearValue;
         ++gearPosition;
         std::cout << "Gear is functioning. Gear position: " << gearPosition << std::endl;
-        
-    if(gearValue > 9)
-    break;
+        if(gearValue > 9)
+        break;
     }
 }
 
@@ -738,7 +730,6 @@ int WristWatch::changRate(int increaseRate, int decreaseRate)
         ++normalRate;
         --fasterRate;
         std::cout << "Faster rate is " << fasterRate << ". Normal rate is " << normalRate << "." << std::endl;
-
         if(normalRate && fasterRate == 50)
         break;
     }
