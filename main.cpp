@@ -148,7 +148,7 @@ void Synthesizer::Keyboard::changeVelocity(int midiValue)
         ++velocityChanged;
         std::cout << "New velocity" << std::endl;
         if(velocityChanged >= 1)
-        break;
+            break;
     }
 }
 
@@ -232,7 +232,7 @@ void Bicycle::arbitraryFunc(int valueA, int valueB, int doABikeThing)
         ++doABikeThing;
         std::cout << "Say something about bikes" << std::endl;
         if(doABikeThing >= 5)
-        break;
+            break;
     }
 }
 
@@ -343,7 +343,7 @@ void Restaurant::cleanTheKitchen(int amountOfAmmonia, int numOfSponges)
         ++cleanTheKitchen;
         std::cout << "The kitchen is being cleaned!" << std::endl;
         if(kitchenIsClean)
-        break;
+            break;
     }
 }
 
@@ -397,7 +397,7 @@ float Bank::convertToCanadianDollar(float dollarValue)
         ++conversionValue;
         std::cout << "Calculated conversion value: " << conversionValue << std::endl;
         if(totalConverted)
-        break;
+            break;
     }
     return conversionValue;
 }
@@ -448,7 +448,7 @@ int Case::removeCase(int inchesRound)
         ++numOfRotations;
         std::cout << "Removing the case. Rotations performed: " << numOfRotations << std::endl;
         if(caseOff)
-        break;
+            break;
     }
     return numOfRotations;
 }
@@ -504,7 +504,7 @@ void Band::removeBand(double wristCircumference)
         --tightnessOfBand;
         std::cout << "The band is being removed." << std::endl;
         if(bandRemoved < 1)
-        break;
+            break;
     }
 }
 
@@ -678,7 +678,7 @@ void Movement::movementFunc(double gearFunction)
         ++gearPosition;
         std::cout << "Gear is functioning. Gear position: " << gearPosition << std::endl;
         if(gearValue > 9)
-        break;
+            break;
     }
 }
 
@@ -731,7 +731,7 @@ int WristWatch::changRate(int increaseRate, int decreaseRate)
         --fasterRate;
         std::cout << "Faster rate is " << fasterRate << ". Normal rate is " << normalRate << "." << std::endl;
         if(normalRate && fasterRate == 50)
-        break;
+            break;
     }
     return neutralRate;
 }
